@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :orders
   resources :comments
   resources :categories
   resources :items
