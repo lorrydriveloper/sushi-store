@@ -1,0 +1,6 @@
+<h3><%= @category.name %></h3>
+
+<% @items.each do |item| %>
+  <%= item.name %>
+  <%= link_to 'show', admin_category_item_path(@category, item) %>
+<% end %>
