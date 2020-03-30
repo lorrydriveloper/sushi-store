@@ -1,15 +1,26 @@
 class Admin::CategoriesController < ApplicationController
     
+    def index
+      @categories = Category.all
+    end
+
+    def show
+      @category = Category.find(params[:id])
+      @items = @category.items
+    end
+
+
+
     def new
       @category = Category.new
       render 'new'
     end
 
     def create
-      @category = Category.new(params[:category])
+      @category = Category.new(category_params)
       if @category.save
         flash[:success] = "Category successfully created"
-        redirect_to @category
+        redirect_to admin_categories_path
       else
         flash[:error] = "Something went wrong"
         render 'new'
@@ -17,15 +28,15 @@ class Admin::CategoriesController < ApplicationController
     end
 
     def edit
-      @category = Categoy.find()
+      @category = Category.find(params[:id])
     end
     
 
     def update
       @category = Category.find(params[:id])
-        if @category.update_attributes(params[:category])
+        if @category.update_attributes(category_params)
           flash[:success] = "Category was successfully updated"
-          redirect_to @category
+          redirect_to admin_categories_path
         else
           flash[:error] = "Something went wrong"
           render 'edit'
@@ -36,17 +47,20 @@ class Admin::CategoriesController < ApplicationController
       @categoy = Category.find(params[:id])
       if @categoy.destroy
         flash[:success] = 'Category was successfully deleted.'
-        redirect_to categoys_url
+        redirect_to admin_categories_path
       else
         flash[:error] = 'Something went wrong'
-        redirect_to categoys_url
+        redirect_to admin_dashboard_path
       end
     end
     
     
     
-    
-  end
+    private
+
+    def category_params
+      params.require(:category).permit(:name, :icon)
+    end
   
 
 end

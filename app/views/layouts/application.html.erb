@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SushiStore</title>
+    <title>Sushi To You</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,16 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% flash.keys.each do |type| %>
+    <div data-alert class="flash <%= type %> alert-box radius">
+    <%= flash[type] %>
+    <a id="close">&times;</a>
+    </div>
+    <% end %>
+<main class='main-container'> 
+<%= yield %>
+</main>
+
+    
   </body>
 </html>

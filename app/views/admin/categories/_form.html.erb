@@ -1,4 +1,4 @@
-<%= form_for category do |f| %>
+<%= form_for category, url:url do |f| %>
   <div class="float_label">
     <%= f.text_field :name %>
   <%= f.label :name %>
@@ -7,4 +7,5 @@
     <%= f.text_field :icon %>
     <%= f.label :icon %>
   </div>
+  <%= f.submit %>
 <% end %>
