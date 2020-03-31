@@ -1,4 +1,9 @@
 <h1>welcome</h1>
 
+<% if current_user.id %>
+    <%= current_user.name%>
+  <img src="<%= current_user.avatar %>" alt="profile image">
 
-<%= link_to('Log in with Facebook!', '/auth/facebook') %>
+
+  <%= link_to 'Logout', logout_path %>
+<% end %>
