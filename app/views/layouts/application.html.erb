@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sushi To You</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>Sushi To You</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
-    <% flash.keys.each do |type| %>
-    <div data-alert class="flash <%= type %> alert-box radius">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <% flash.keys.each do |type| %>
+  <div data-alert class="flash <%= type %> alert-box radius">
     <%= flash[type] %>
     <a id="close">&times;</a>
-    </div>
-    <% end %>
-    <div class="logo">
-<h1 class='heading-primary' >
-<span class='heading-primary--main'>Sushi</span>
-<span class='heading-primary--sub'>To You</span>
-</h1>
-<%= image_tag('icons/sushi-1.png',class: 'logo__icon') %>
-</div>
+  </div>
+  <% end %>
+  <div class="logo">
+    <h1 class='heading-primary'>
+      <span class='heading-primary--main'>Sushi</span>
+      <span class='heading-primary--sub'>To You</span>
+    </h1>
+    <%= image_tag('icons/sushi-1.png',class: 'logo__icon') %>
+  </div>
 
   <div class="navigation">
-  
-  <input type="checkbox" id="navi-toggle" class="navigation__checkbox">
-  <label for="navi-toggle" class='navigation__button'>
-    <span class='navigation__icon' >&nbsp;</span>
-  </label>
 
-  <div class="navigation__background">&nbsp;</div>
+    <input type="checkbox" id="navi-toggle" class="navigation__checkbox">
+    <label for="navi-toggle" class='navigation__button'>
+      <span class='navigation__icon'>&nbsp;</span>
+    </label>
 
-  <nav class="navigation__nav">
-    <div class="navigation__panel--left"></div>
-    <div class="navigation__panel--right"></div>
-  </nav>
+    <div class="navigation__background">&nbsp;</div>
+
+    <nav class="navigation__nav">
+      <div class="navigation__panel--left"></div>
+      <div class="navigation__panel--right"></div>
+    </nav>
   </div>
-<main class='main-container'> 
-<%= yield %>
-</main>
+  <main class='main-container'>
+    <%= yield %>
+  </main>
 
-    
-  </body>
+
+</body>
+
 </html>
