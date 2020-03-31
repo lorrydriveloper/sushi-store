@@ -21,4 +21,9 @@
    --color3: rgba(234, 225, 81, 1);
    --color4: rgba(238, 239, 168, 1);
    --color5: rgba(250, 253, 246, 1);
+
+   --success: green;
+   --error: red;
+   --warning: orange;
+
  }
