@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+
+  get '/auth/facebook/callback' => 'sessions#create'
+
   resources :orders
   resources :comments
   resources :categories, only: %i[index show]
