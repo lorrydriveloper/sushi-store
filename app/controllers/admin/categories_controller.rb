@@ -2,7 +2,7 @@
 
 module Admin
   class CategoriesController < AdminController
-    before_action :find_category, except: %i[index new]
+    before_action :find_category, except: %i[index create new]
 
     def index
       @categories = Category.all
@@ -18,6 +18,7 @@ module Admin
     end
 
     def create
+      @category = Category.new(category_params)
       if @category.save
         flash[:success] = 'Category successfully created'
         redirect_to admin_categories_path
@@ -40,8 +41,8 @@ module Admin
     end
 
     def destroy
-      if @categoy.destroy
-        flash[:success] = 'Category was successfully deleted.'
+      if @category.destroy
+        flash[:warning] = 'Category was successfully deleted.'
         redirect_to admin_categories_path
       else
         flash[:error] = 'Something went wrong'
