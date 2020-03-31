@@ -1,5 +1,5 @@
 .menu {
-  &__categories {
+  .categories {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -27,12 +27,31 @@
       text-align: center;
     }
   }
-  &__items {
-    position: relative;
+  &__header{
+      font-family: 'Revalia';
 
-    &__header{
-      position: absolute;
       font-size: 7rem;
+    }
+  .items {
+    position: relative;
+    overflow: scroll;
+    height: calc(100vh - 59rem);
+
+    
+    &__container{
+      height: 32.5rem;
+      width: 100%;
+      margin-top: 2rem;
+      box-shadow: 4px 5px 15px rgba(0, 0, 0, 0.25),
+      0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 30px 30px 30px 35px;
+    }
+
+    &__img{
+      width: 100%;
+      height: 100%;
+      object-fit: scale-down;
+      
     }
   }
 }

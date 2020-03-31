@@ -6,7 +6,7 @@ class WelcomeController < ApplicationController
 
     @categories = Category.all 
 
-    @popular = Item.all
+    @items = Item.all
 
 
   end
