@@ -23,12 +23,20 @@
   <div class="items">
 
     <% @items.each do |item| %>
-    <div class="items__container">
-      <%= image_tag('sushi',class: 'items__img') %>
+    <a href="<%= item_path(item) %>">
+      <div class="items__container"
+        style="background-image: url(https://www.thaimama-muenchen.de/s/img/emotionheader_1.jpg);">
+        <div class="info info--price"><p class="price">£ <%= item.price %></p></div>
+        <div class="info info--pieces"><p class="pieces"><%= item.pieces %>P</p></div>
+        <div class="items__body">
+         
+          <h3 class='items__body-header'><%= item.name %></h3>
+        </div>
 
-    </div>
+      </div>
+    </a>
     <% end %>
+
+
+
   </div>
-
-
-</div>
