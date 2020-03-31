@@ -2,10 +2,10 @@
 <% @categories.each do |category| %>
   <li>
      <h3><%= category.name %></h3>
-     <%= link_to 'edit',edit_admin_category_path(category), class:'crud-button' %>
-     <%= link_to 'show', admin_category_path(category),class:'crud-button'%>
-     <%= button_to 'destroy', admin_category_path(category), method: 'delete', class:'crud-button' %>
+     <%= link_to 'edit',edit_admin_category_path(category), class:'btn-crud' %>
+     <%= link_to 'show', admin_category_path(category),class:'btn-crud'%>
+     <%= button_to 'destroy', admin_category_path(category), method: 'delete', class:'btn-crud' %>
   </li>
 <% end %>
 
-<%= link_to 'new', new_admin_category_path,class:'crud-button'%>
+<%= link_to 'new', new_admin_category_path,class:'btn-crud'%>

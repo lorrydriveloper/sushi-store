@@ -8,16 +8,14 @@ module Admin
 
     def new
       @category = Category.find(params[:category_id])
-      @item = Item.new.tap{ |i| i.category = @category}
-      
+      @item = Item.new.tap { |i| i.category = @category }
     end
 
     def edit
-     @category = Category.find(params[:category_id])
+      @category = Category.find(params[:category_id])
     end
 
     def create
- 
       @item = Item.new(item_params)
       if @item.save
         flash[:success] = 'Item successfully created'
@@ -41,11 +39,10 @@ module Admin
     def destroy
       if @item.destroy
         flash[:success] = 'Item was successfully deleted'
-        redirect_to admin_categories_path
       else
         flash[:error] = 'Something went wrong'
-        redirect_to admin_categories_path
       end
+      redirect_to admin_category_path(@item.category)
     end
 
     private

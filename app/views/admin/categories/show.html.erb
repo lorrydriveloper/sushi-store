@@ -1,6 +1,14 @@
 <h3><%= @category.name %></h3>
 
 <% @items.each do |item| %>
-  <%= item.name %>
-  <%= link_to 'show', admin_category_item_path(@category, item) %>
+  <li>
+  <%= item.name %> - 
+  <%= link_to 'show', admin_category_item_path(@category, item), class:'btn-crud' %> -
+  <%= link_to 'edit', edit_admin_category_item_path(@category, item), class:'btn-crud' %> -
+  <span><%= button_to 'destroy', admin_category_item_path(@category, item), class:'btn-crud', method: :delete %></span>
+  
+  </li>
+ 
 <% end %>
+
+<%= link_to 'new', new_admin_category_item_path(@category), class:'btn-crud'%>

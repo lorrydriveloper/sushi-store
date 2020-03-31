@@ -1,5 +1,6 @@
-class CategoriesController < ApplicationController
+# frozen_string_literal: true
 
+class CategoriesController < ApplicationController
   def index
     @categories = Category.all
   end
@@ -8,6 +9,4 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @items = @category.items
   end
-  
-  
 end
