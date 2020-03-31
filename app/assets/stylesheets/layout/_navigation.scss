@@ -1,0 +1,71 @@
+.navigation{
+  &__checkbox{
+    display: none;
+  }
+
+  &__background{
+    background-image: radial-gradient(var(--color2), var(--color4));
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 6.5rem;
+    left: 6.5rem;
+    z-index: 10;
+    transition: all 1s;
+
+  }
+
+  &__button {
+    height: 7rem;
+    width: 7rem;
+    position: fixed;
+    background-color: var(--color1);
+    border-radius: 50%;
+    bottom: 6rem;
+    left: 6rem;
+    z-index: 20;
+    text-align: center;
+    cursor: pointer;
+  }
+
+
+  &__checkbox:checked ~ &__background{
+    transform: scale(120);
+  }
+
+   &__checkbox:checked ~ &__nav{
+    width: 100vw;
+    background-color: red;
+    opacity: 1;
+    z-index: 30;
+  }
+
+    &__icon {
+    position: relative;
+    margin-top: 3.5rem;
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 3px;
+      background-color: var(--color4);
+      display: inline-block;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
+    }
+
+    &::before {
+      top: 0.8rem;
+    }
+    &::after {
+      top: -0.8rem;
+    }
+  }
+}
