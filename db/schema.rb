@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_03_31_091931) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "icon"
@@ -20,8 +23,8 @@ ActiveRecord::Schema.define(version: 2020_03_31_091931) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer "item_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "item_id", null: false
+    t.bigint "user_id", null: false
     t.string "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -30,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_03_31_091931) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.integer "category_id", null: false
+    t.bigint "category_id", null: false
     t.string "name"
     t.float "price"
     t.integer "pieces"
@@ -42,8 +45,8 @@ ActiveRecord::Schema.define(version: 2020_03_31_091931) do
   end
 
   create_table "order_items", force: :cascade do |t|
-    t.integer "order_id", null: false
-    t.integer "item_id", null: false
+    t.bigint "order_id", null: false
+    t.bigint "item_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["item_id"], name: "index_order_items_on_item_id"
@@ -51,7 +54,7 @@ ActiveRecord::Schema.define(version: 2020_03_31_091931) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.integer "total"
     t.string "status"
     t.datetime "created_at", precision: 6, null: false
@@ -64,6 +67,7 @@ ActiveRecord::Schema.define(version: 2020_03_31_091931) do
     t.string "password_digest"
     t.string "address"
     t.string "avatar"
+    t.boolean "admin", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email"
