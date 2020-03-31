@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Admin
-  class ItemsController < ApplicationController
+  class ItemsController < AdminController
     before_action :find_item, except: %i[new create]
 
     def show; end
