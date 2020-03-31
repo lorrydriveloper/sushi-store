@@ -1,0 +1,38 @@
+.menu {
+  &__categories {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-top: .5rem;
+
+    &__container {
+      flex: 0 0 20%;
+
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+
+    }
+
+    &__icon {
+      background-color: lightgray;
+      height: 14rem;
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 2rem;
+    }
+
+    &__text {
+      font-family: 'Revalia';
+      font-size: 4.5rem;
+      text-align: center;
+    }
+  }
+  &__items {
+    position: relative;
+
+    &__header{
+      position: absolute;
+      font-size: 7rem;
+    }
+  }
+}

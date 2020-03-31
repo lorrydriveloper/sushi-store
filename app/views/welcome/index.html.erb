@@ -1,7 +1,28 @@
-<% if current_user.id %>
+
+<div class="header">
+  <% if current_user.id %>
     <%= current_user.name%>
   <img src="<%= current_user.avatar %>" alt="profile image">
 
 
   <%= link_to 'Logout', logout_path %>
 <% end %>
+</div>
+
+<div class="menu">
+<div class="menu__categories">
+    <% @categories.each do |category| %>
+    <div class="menu__categories__container">
+      <a href="<%= category_path(category) %>"><div class="menu__categories__icon"></div></a>
+      <h4 class="menu__categories__text"><%= category.name %></h4>
+    </div>  
+    <% end %>
+</div>
+
+<div class="menu__items">
+<h3 class="menu__items__header">Popular</h3>
+
+</div>
+
+
+</div>
