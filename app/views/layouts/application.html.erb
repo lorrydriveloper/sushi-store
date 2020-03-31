@@ -23,6 +23,21 @@
 </h1>
 <%= image_tag('icons/sushi-1.png',class: 'logo__icon') %>
 </div>
+
+  <div class="navigation">
+  
+  <input type="checkbox" id="navi-toggle" class="navigation__checkbox">
+  <label for="navi-toggle" class='navigation__button'>
+    <span class='navigation__icon' >&nbsp;</span>
+  </label>
+
+  <div class="navigation__background">&nbsp;</div>
+
+  <nav class="navigation__nav">
+    <div class="navigation__panel--left"></div>
+    <div class="navigation__panel--right"></div>
+  </nav>
+  </div>
 <main class='main-container'> 
 <%= yield %>
 </main>
