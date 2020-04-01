@@ -1,0 +1,32 @@
+<div class="menu">
+  <div class="categories">
+    <% categories.each do |category| %>
+    <div class="categories__container">
+      <a href="<%= category_path(category) %>">
+        <div class="categories__icon"></div>
+      </a>
+      <h4 class="categories__text"><%= category.name %></h4>
+    </div>
+    <% end %>
+  </div>
+  <h3 class="menu__header"><%= category.name %></h3>
+  <div class="items">
+
+    <% items.each do |item| %>
+    <a href="<%= item_path(item) %>">
+      <div class="items__container"
+        style="background-image: url(<%= item.image %>);">
+        <div class="info info--price"><p class="price">£ <%= item.price %></p></div>
+        <div class="info info--pieces"><p class="pieces"><%= item.pieces %>P</p></div>
+        <div class="items__body">
+         
+          <h3 class='items__body-header'><%= item.name %></h3>
+        </div>
+
+      </div>
+    </a>
+    <% end %>
+
+
+
+  </div>
