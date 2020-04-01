@@ -5,11 +5,11 @@
   <%= content_tag :div, class: 'item-info__container' do %>
     <%= content_tag :div, @item.description, class: 'description' %>
     <%= content_tag :div, @item.name, class: 'name' %>
-    <%= form_tag Order.new , class: 'counter' do %>
+    <%= form_tag Order.new, remote: true , class: 'counter' do %>
     <%= content_tag :div, class:'counter__container' do %>
     <%= content_tag :div, '-', class:'value-button', id: 'decrease', onclick:"decreaseValue()" %>
-      <input type="number" name="item['quantity']" id="number" min='1' max='9' value='1' />
-      <input type="hidden" name="item['id']" value=<%= @item.id %>>
+      <input type="number" name="item[quantity]" id="number" min='1' max='9' value=<%= items_in_cart(@item.id) %> />
+      <input type="hidden" name="item[id]" value=<%= @item.id %>>
     <%= content_tag :div, '+', class:'value-button', id: 'increase', onclick:"increaseValue()" %>
     <% end %>
     
