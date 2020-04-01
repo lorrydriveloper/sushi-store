@@ -1,5 +1,3 @@
-<%= @category.name %>
+<%= render 'partials/header' %>
 
-<% @items.each do |item| %>
-  <p><%= item.name %> - £<%= item.price %> </p>
-<% end %>
+<%= render 'partials/menu', categories:@categories, category:@category, items:@items %>
