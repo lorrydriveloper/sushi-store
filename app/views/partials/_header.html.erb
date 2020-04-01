@@ -1,33 +1,22 @@
-<div class="header">
+<%= content_tag :div, class:'header' do %>
+<%= content_tag :div, class:'logo' do %>
+<%= content_tag :h1, class:'heading-primary' do %>
+<%= content_tag :span,'Sushi', class: 'heading-primary--main' %>
+<%= content_tag :span,'To You', class: 'heading-primary--sub' %>
+<% end %>
+<%= image_tag('icons/sushi-1.png', class: 'logo__icon') %>
+<% end %>
+<div class="navigation">
+  <input type="checkbox" id="navi-toggle" class="navigation__checkbox">
+  <label for="navi-toggle" class='navigation__button'>
+    <span class='navigation__icon'>&nbsp;</span>
+  </label>
+  <div class="navigation__background">&nbsp;</div>
+  <div class="navigation__items"><p><%= session[:quantity] %></p></div>
 
-<div class="logo">
-    <h1 class='heading-primary'>
-      <span class='heading-primary--main'>Sushi</span>
-      <span class='heading-primary--sub'>To You</span>
-    </h1>
-    <%= image_tag('icons/sushi-1.png',class: 'logo__icon') %>
-  </div>
-
-  <div class="navigation">
-
-    <input type="checkbox" id="navi-toggle" class="navigation__checkbox">
-    <label for="navi-toggle" class='navigation__button'>
-      <span class='navigation__icon'>&nbsp;</span>
-    </label>
-
-    <div class="navigation__background">&nbsp;</div>
-
-    <nav class="navigation__nav">
-      <div class="navigation__panel--left"></div>
-      <div class="navigation__panel--right"></div>
-    </nav>
-  </div>
-  <% if current_user.id %>
-  <%= current_user.name%>
-  <img src="<%= current_user.avatar %>" alt="profile image">
-
-
-  <%= link_to 'Logout', logout_path %>
-  <% end %>
-  
+  <nav class="navigation__nav">
+    <div class="navigation__panel--left"></div>
+    <div class="navigation__panel--right"></div>
+  </nav>
 </div>
+<% end %>
