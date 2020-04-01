@@ -1,18 +1,26 @@
-.navigation{
-  &__checkbox{
+.navigation {
+  background-color: red;
+  width: 10rem;
+  height: 10rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  &__checkbox {
     display: none;
   }
 
-  &__background{
+  &__background {
     background-image: radial-gradient(var(--color2), var(--color4));
     height: 6rem;
     width: 6rem;
+    top: 4.5rem;
+    right: 4.5rem;
     border-radius: 50%;
-    position: fixed;
-    bottom: 6.5rem;
-    left: 6.5rem;
     z-index: 10;
     transition: all 1s;
+    position: fixed;
+    
 
   }
 
@@ -20,30 +28,31 @@
     height: 7rem;
     width: 7rem;
     position: fixed;
+    top:4rem;
+    right: 4rem;
     background-color: var(--color1);
     border-radius: 50%;
-    bottom: 6rem;
-    left: 6rem;
     z-index: 20;
     text-align: center;
     cursor: pointer;
   }
 
 
-  &__checkbox:checked ~ &__background{
+  &__checkbox:checked~&__background {
     transform: scale(120);
   }
 
-   &__checkbox:checked ~ &__nav{
+  &__checkbox:checked~&__nav {
     width: 100vw;
     background-color: red;
     opacity: 1;
     z-index: 30;
   }
 
-    &__icon {
+  &__icon {
     position: relative;
     margin-top: 3.5rem;
+
     &,
     &::before,
     &::after {
@@ -64,6 +73,7 @@
     &::before {
       top: 0.8rem;
     }
+
     &::after {
       top: -0.8rem;
     }
