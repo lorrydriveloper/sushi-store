@@ -1,10 +1,11 @@
 <%= render 'partials/header' %>
 
 <%= content_tag :div, class: 'item-info' do %>
-  <%= image_tag 'https://live.staticflickr.com/1482/25265733212_d39cf95839_n.jpg', class: 'item-info__img' %>
+  <%= image_tag @item.image, class: 'item-info__img' %>
   <%= content_tag :div, class: 'item-info__container' do %>
-    <%= content_tag :div, @item.description, class: 'description' %>
     <%= content_tag :div, @item.name, class: 'name' %>
+    <%= content_tag :div, @item.description, class: 'description' %>
+    
     <%= form_tag Order.new, remote: true , class: 'counter' do %>
     <%= content_tag :div, class:'counter__container' do %>
     <%= content_tag :div, '-', class:'value-button', id: 'decrease', onclick:"decreaseValue()" %>
@@ -12,7 +13,6 @@
       <input type="hidden" name="item[id]" value=<%= @item.id %>>
     <%= content_tag :div, '+', class:'value-button', id: 'increase', onclick:"increaseValue()" %>
     <% end %>
-    
     <%= submit_tag "Add to cart", class:'add-cart' %>
     <% end %>
   <% end %>

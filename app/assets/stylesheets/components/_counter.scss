@@ -1,0 +1,65 @@
+.counter {
+  display: -webkit-box;
+  display: flex;
+  margin-top: 2rem;
+  justify-content: space-between;
+
+  &__container {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+
+    .value-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 4rem;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      padding-bottom: 5px;
+      background-color: grey;
+      box-shadow: 11px 15px 19px 0px rgba(0, 0, 0, 0.75);
+      cursor: pointer;
+    }
+
+    #number {
+      font-size: 3rem;
+      text-align: center;
+      background-color: transparent;
+      font-family: 'Revalia';
+      width: 5rem;
+      height: 5rem;
+      border: none;
+    }
+
+  }
+
+
+  .add-cart {
+    background-color: grey;
+    border: none;
+    font-family: 'Revalia';
+    text-transform: capitalize;
+    padding: 1.5rem 4rem;
+    border-radius: 2rem;
+    box-shadow: 11px 15px 19px 0px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+  }
+
+  // NO SPINNERS
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+}
