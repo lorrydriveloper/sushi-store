@@ -58,6 +58,7 @@
     cursor: pointer;
   }
 
+ 
 
   &__checkbox:checked~&__background {
     -webkit-transform: scale(120);
@@ -69,10 +70,14 @@
   }
 
   &__checkbox:checked~&__nav {
+    position: absolute;
+    height: 100vh;
     width: 100vw;
     background-color: red;
     opacity: 1;
-    z-index: 100;
+    z-index: 11;
+    left: -260px;
+    right: inherit;
   }
 
   &__icon {
@@ -105,4 +110,36 @@
       top: -0.8rem;
     }
   }
+ &__nav {
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   justify-content: center;
+   -webkit-transition: all 1.2s;
+   transition: all 1.2s;
+   opacity: 0;
+   &__page{
+     height: 20%;
+     background-color: white;
+     z-index: 12;
+
+     &--1{
+      background-color: yellow;
+     }
+     &--2 {
+       background-color: blue;
+     }
+     &--3 {
+       background-color: orangered;
+     }
+     &--4 {
+       background-color: orchid;
+     }
+     &--5 {
+       background-color: olive;
+     }
+   }
+ }
+
+
 }
