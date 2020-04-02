@@ -1,47 +1,47 @@
-.counter{
-  position: absolute;
-  right: 3rem;
-  width: fit-content;
-  font-size: 3rem;
-  margin-top: 2rem;
-  &__container{
-    display: flex;
-    justify-content: center;
-     .value-button {
-       display: inline-block;
-       width: 8rem;
-       height: 8rem;
-       border-radius: 50%;
-       background-color: grey;
-       text-align: center;
-       padding: 2rem;
-       box-shadow: 11px 15px 19px 0px rgba(0, 0, 0, 0.75);
-     }
+// .counter{
+//   position: absolute;
+//   right: 3rem;
+//   width: fit-content;
+//   font-size: 3rem;
+//   margin-top: 2rem;
+//   &__container{
+//     display: flex;
+//     justify-content: center;
+//      .value-button {
+//        display: inline-block;
+//        width: 8rem;
+//        height: 8rem;
+//        border-radius: 50%;
+//        background-color: grey;
+//        text-align: center;
+//        padding: 2rem;
+//        box-shadow: 11px 15px 19px 0px rgba(0, 0, 0, 0.75);
+//      }
 
-     #number {
-       font-size: 5rem;
-       text-align: center;
-       background-color: transparent;
-       font-family: 'Revalia';
-       width: 8rem;
-       height: 7rem;
-       border: none;
-     }
+//      #number {
+//        font-size: 5rem;
+//        text-align: center;
+//        background-color: transparent;
+//        font-family: 'Revalia';
+//        width: 8rem;
+//        height: 7rem;
+//        border: none;
+//      }
 
-  }
+//   }
 
  
 
-     .add-cart {
-       background-color: grey;
-       display: block;
-       width: 100%;
-       margin-top: 3rem;
-       font-size:6rem;
-       font-family: 'Revalia';
-       text-transform: capitalize;
-      padding: 1.5rem 4rem;
-      border-radius: 2rem;
-      box-shadow: 11px 15px 19px 0px rgba(0, 0, 0, 0.75);
-     }
-}
+//      .add-cart {
+//        background-color: grey;
+//        display: block;
+//        width: 100%;
+//        margin-top: 3rem;
+//        font-size:6rem;
+//        font-family: 'Revalia';
+//        text-transform: capitalize;
+//       padding: 1.5rem 4rem;
+//       border-radius: 2rem;
+//       box-shadow: 11px 15px 19px 0px rgba(0, 0, 0, 0.75);
+//      }
+// }

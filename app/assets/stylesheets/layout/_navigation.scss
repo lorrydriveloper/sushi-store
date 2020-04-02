@@ -1,53 +1,57 @@
 .navigation {
+  position: absolute;
   width: 10rem;
   height: 10rem;
-  position: absolute;
-  top: 0;
   right: 0;
-
-  &__items { 
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50%;
-    width: 50%;
-    border-radius: 50%;
-    z-index: 40;
-    bottom: 0;
-    background-color: wheat;
-    & p{
-      font-size: 3rem;
-    }
-
-
-  }
 
   &__checkbox {
     display: none;
+
+  }
+
+  &__items {
+    position: absolute;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 40%;
+    width: 40%;
+    border-radius: 50%;
+    z-index: 40;
+    bottom: 1rem;
+    background-color: wheat;
+
+    & p {
+      font-size: 3rem;
+    }
   }
 
   &__background {
-    background: radial-gradient(circle, rgba(71, 63, 251, 1) 0%, rgba(160, 84, 171, 1) 46%, rgba(183, 143, 79, 1) 61%, rgba(252, 70, 95, 1) 100%);
+    position: absolute;
+    left: 2.5rem;
+    top: 1.5rem;
+    background-image: $btn-background;
     height: 6rem;
     width: 6rem;
-    top: 4.5rem;
-    right: 4.5rem;
     border-radius: 50%;
     z-index: 10;
+    -webkit-transition: all 1s;
     transition: all 1s;
-    position: fixed;
+
 
 
   }
 
   &__button {
+    position: absolute;
+    margin-left: 2rem;
+    margin-top: 1rem;
     height: 7rem;
     width: 7rem;
-    position: fixed;
-    top: 4rem;
-    right: 4rem;
-    background-color: var(--color1);
+    background-color: $menu-btn-color;
     border-radius: 50%;
     z-index: 20;
     text-align: center;
@@ -56,8 +60,10 @@
 
 
   &__checkbox:checked~&__background {
+    -webkit-transform: scale(120);
     transform: scale(120);
   }
+
   &__checkbox:checked~&__items {
     display: none;
   }
@@ -87,6 +93,7 @@
       content: "";
       position: absolute;
       left: 0;
+      -webkit-transition: all 0.2s;
       transition: all 0.2s;
     }
 

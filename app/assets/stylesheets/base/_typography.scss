@@ -1,5 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Revalia&display=swap");
+
 body {
   font-family: "Revalia", cursive;
-  padding: 3rem;
+}
+
+.logo {
+  position: relative;
+  width: 18rem;
+  height: 100%;
+  padding: .5rem;
+
+  .heading-primary {
+    text-shadow: $text-shadow;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+
+    &--main {
+      font-size: 4rem;
+
+    }
+
+    &--sub {
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+      position: absolute;
+      right: -3rem;
+      bottom: 4rem;
+    }
+  }
+
+  &__icon {
+    height: 8rem;
+    width: 12rem;
+    position: absolute;
+    bottom: -1rem;
+    left: 2rem;
+
+  }
 }
