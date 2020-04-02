@@ -2,14 +2,15 @@
 
 <%= content_tag :div, class: 'item-info' do %>
   <%= image_tag @item.image, class: 'item-info__img' %>
+  <%= content_tag :div,@item.price ,class: 'item-info__price' %>
+  <%= content_tag :div,@item.pieces ,class: 'item-info__price' %>
   <%= content_tag :div, class: 'item-info__container' do %>
     <%= content_tag :div, @item.name, class: 'name' %>
     <%= content_tag :div, @item.description, class: 'description' %>
-    
     <%= form_tag Order.new, remote: true , class: 'counter' do %>
     <%= content_tag :div, class:'counter__container' do %>
     <%= content_tag :div, '-', class:'value-button', id: 'decrease', onclick:"decreaseValue()" %>
-      <input type="number" name="item[quantity]" id="number" min='1' max='9' value=<%= items_in_cart(@item.id) %> />
+      <input type="number" name="item[quantity]" id="number" min='0' max='9' value=<%= items_in_cart(@item.id) %> />
       <input type="hidden" name="item[id]" value=<%= @item.id %>>
     <%= content_tag :div, '+', class:'value-button', id: 'increase', onclick:"increaseValue()" %>
     <% end %>
@@ -31,7 +32,7 @@ function decreaseValue() {
   var value = parseInt(document.getElementById('number').value, 10);
   value = isNaN(value) ? 0 : value;
   value < 1 ? value = 1 : '';
-  value > 1 ? value-- : value;
+  value > 0 ? value-- : value;
   document.getElementById('number').value = value;
 }
 </script>
