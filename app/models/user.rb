@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :orders
   has_many :items, through: :orders
   has_many :comments
-  # has_many :commented_items, through: :comments, foreing_key: 'item_id'
+  has_many :commented_items, through: :comments, source: 'item'
 
   def email_validator
     errors.add(:email, EmailAddress(email)) unless EmailAddress.valid? email
