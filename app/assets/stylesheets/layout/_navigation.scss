@@ -1,48 +1,50 @@
 .navigation {
-  position: absolute;
-  width: 10rem;
-  height: 10rem;
-  right: 0;
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    right: 0;
 
   &__checkbox {
     display: none;
-
   }
 
-  &__items {
-    position: absolute;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-    height: 40%;
-    width: 40%;
-    border-radius: 50%;
-    z-index: 40;
-    bottom: 1rem;
-    background-color: wheat;
+    &__items {
+      position: absolute;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      align-items: center;
+      height: 40%;
+      width: 40%;
+      border-radius: 50%;
+      z-index: 40;
+      bottom: 1rem;
+      background-color: wheat;
 
-    & p {
-      font-size: 3rem;
+      & p {
+        font-size: 3rem;
+      }
     }
-  }
 
   &__background {
-    position: absolute;
-    left: 2.5rem;
-    top: 1.5rem;
-    background-image: $btn-background;
-    height: 6rem;
-    width: 6rem;
-    border-radius: 50%;
-    z-index: 10;
-    -webkit-transition: all 1s;
-    transition: all 1s;
-
-
-
+      position: absolute;
+      left: 2.5rem;
+      top: 1.5rem;
+      background-image: $btn-background;
+      height: 6rem;
+      width: 6rem;
+      border-radius: 50%;
+      z-index: 10;
+ 
+    -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+ 
+    transition: -webkit-transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+ 
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+ 
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1), -webkit-transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
   }
 
   &__button {
@@ -58,26 +60,70 @@
     cursor: pointer;
   }
 
- 
-
-  &__checkbox:checked~&__background {
-    -webkit-transform: scale(120);
-    transform: scale(120);
+  &__nav {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    display: none;
+    opacity: 0;
+    width: 0;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
   }
 
-  &__checkbox:checked~&__items {
-    display: none;
+  &__list {
+    position: absolute;
+    @include centering;
+    list-style: none;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__item {
+    margin: 1rem;
+  }
+
+  &__link {
+
+    &:link,
+    &:visited {
+      display: inline-block;
+      font-size: 3.5rem;
+      font-weight: 300;
+      padding: 1rem 2rem;
+      color: white;
+      text-transform: uppercase;
+      text-decoration: none;
+      -webkit-transition: all 0.4s;
+      transition: all 0.4s;
+
+    }
+
+    &:hover,
+    &:active {
+      background-position: 100%;
+      color: yellow;
+      -webkit-transform: translateX(1rem);
+              transform: translateX(1rem);
+    }
+
+    span {
+      margin-right: 1rem;
+      display: inline-block;
+    }
+  }
+
+  &__checkbox:checked~&__background {
+    -webkit-transform: scale(80);
+            transform: scale(80);
   }
 
   &__checkbox:checked~&__nav {
-    position: absolute;
-    height: 100vh;
+    display: inline;
     width: 100vw;
-    background-color: red;
     opacity: 1;
-    z-index: 11;
-    left: -260px;
-    right: inherit;
   }
 
   &__icon {
@@ -89,7 +135,7 @@
     &::after {
       width: 3rem;
       height: 3px;
-      background-color: var(--color4);
+      background-color: #333;
       display: inline-block;
     }
 
@@ -110,36 +156,30 @@
       top: -0.8rem;
     }
   }
- &__nav {
-   display: flex;
-   flex-direction: column;
-   text-align: center;
-   justify-content: center;
-   -webkit-transition: all 1.2s;
-   transition: all 1.2s;
-   opacity: 0;
-   &__page{
-     height: 20%;
-     background-color: white;
-     z-index: 12;
 
-     &--1{
-      background-color: yellow;
-     }
-     &--2 {
-       background-color: blue;
-     }
-     &--3 {
-       background-color: orangered;
-     }
-     &--4 {
-       background-color: orchid;
-     }
-     &--5 {
-       background-color: olive;
-     }
-   }
- }
+  &__button:hover &__icon {
+    &::before {
+      top: 1rem;
+    }
 
+    &::after {
+      top: -1rem;
+    }
+  }
 
+  &__checkbox:checked+&__button &__icon {
+    background-color: transparent;
+
+    &::before {
+      top: 0;
+      -webkit-transform: rotate(135deg);
+              transform: rotate(135deg);
+    }
+
+    &::after {
+      top: 0;
+      -webkit-transform: rotate(-135deg);
+              transform: rotate(-135deg);
+    }
+  }
 }

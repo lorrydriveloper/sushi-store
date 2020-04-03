@@ -49,7 +49,8 @@
     position: relative;
     background-color: whitesmoke;
     overflow-y: scroll;
-
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, auto));
 
     &__container {
       position: relative;

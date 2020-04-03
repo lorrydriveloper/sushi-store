@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  resources :orders
+  resources :orders do
+    get '/checkout' => 'orders#show'
+  end
   resources :comments
   resources :categories, only: %i[index show]
   resources :items, only: %i[index show]

@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
   before_action :current_user, :cart
 
   private
-  
+
+
   def cart 
    session[:cart] ||= session[:cart] = {}
   end

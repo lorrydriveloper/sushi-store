@@ -1,0 +1,32 @@
+<%= render 'partials/header' %>
+
+<h2>Checkout</h2>
+<%= form_for @order do |f| %>
+  <% @order_hash.each do |hash| %>
+    <% hash.each do |quantity, item| %>
+    <% if quantity.to_i > 0 %>
+      <h3><%= item.name %> -  <%= item.price %> - <%= quantity %> 
+      Total: £ <%= content_tag :span, total(quantity, item), class:'item_total' %>
+      </h3>
+     <%= link_to 'Modify', item_path(item) %>
+    <% end %>
+      
+    <% end %>
+  <% end %>
+  <h2>Grant Total: £  <span class="grand_total"></span></h2>
+
+  <%= f.submit 'Checkout' %>
+<% end %>
+
+<script>
+
+  function grand_total() {
+    span = document.querySelectorAll('.item_total')
+    arr = []
+    span.forEach(total => arr.push(parseFloat(total.innerText)))
+    return arr.reduce((a, b) => a + b, 0).toFixed(2)
+  }
+
+  grand = document.querySelector('.grand_total')
+  grand.innerHTML = grand_total()
+</script>
