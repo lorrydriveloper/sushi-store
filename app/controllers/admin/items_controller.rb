@@ -2,8 +2,11 @@
 
 module Admin
   class ItemsController < AdminController
-    before_action :find_item, except: %i[new create]
+    before_action :find_item, except: %i[index new create]
 
+    def index 
+      @items = Item.all
+    end
     def show; end
 
     def new
@@ -48,9 +51,14 @@ module Admin
     private
 
     def item_params
+      img_upload(params)
       params.require(:item).permit(:name, :pieces, :price, :image, :description, :category_id)
     end
 
+    def img_upload(params)
+      img = Cloudinary::Uploader.upload(params[:item][:image])
+      params[:item][:image] = img['url']
+    end
     def find_item
       @item = Item.find(params[:id])
     end

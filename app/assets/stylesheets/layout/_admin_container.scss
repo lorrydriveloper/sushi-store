@@ -1,0 +1,13 @@
+.admin_container {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+
+  .grid_container{
+    background-color: olive;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(320px, 1fr));
+    padding: 2rem;
+    gap: 1rem;
+  }
+}

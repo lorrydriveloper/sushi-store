@@ -1,5 +1,15 @@
-Admin Dashboard
+<div class="admin_container">
+<h1 class="admin_header">Admin Dashboard</h1>
 
-<%= link_to 'create category', new_admin_category_path %>
+<div class="grid_container">
+<div class="grid_item">
+  <%= link_to 'Categories', admin_categories_path, class: 'admin_link' %>
+</div>
+<div class="grid_item">
+  <%= link_to 'Items', admin_items_path, class: 'admin_link' %>
+</div>
+</div>
 
-<%= link_to 'create item', new_admin_item_path %>
+
+
+</div>

@@ -10,8 +10,11 @@
 @import 'layout/main_container';
 @import 'layout/navigation';
 @import 'layout/menu';
+@import 'layout/admin_container';
 
 @import 'pages/items';
+@import 'pages/dashboard';
+
 
 @import 'components/buttons';
 @import 'components/counter';
