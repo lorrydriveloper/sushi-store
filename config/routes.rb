@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   namespace :admin do
     get 'dashboard' => 'dashboard#index'
+    resources :items, only: %i[index]
     resources :categories do
       resources :items, except: %i[index]
     end
