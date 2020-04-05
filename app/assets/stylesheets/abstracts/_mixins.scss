@@ -10,3 +10,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin horizontal-center {
+          margin-left: 50%;
+          transform: translateX(-50%);
+}

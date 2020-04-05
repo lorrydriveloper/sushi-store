@@ -1,22 +1,24 @@
 <%= render 'partials/header' %>
 
-<div class="flex_container">
-  <%= form_for @user do |f|  %>
-    <div class="float_label">
-    <%= f.text_field :email %>
+<div class="flex-container center-flex login">
+  <%= form_for(@user, html:{class: 'login__form'} ) do |f|  %>
+    <div class="float-label">
+    <%= f.text_field :email, required:true %>
     <%= f.label :email %>
     </div>
     
-    <div class="float_label">
-    <%= f.password_field :password %>
+    <div class="float-label">
+    <%= f.password_field :password, required:true %>
     <%= f.label :password %>
     </div>
-    
-    <%= f.submit 'Login' %>
+        
+    <%= f.submit 'Login', class:'btn btn--login' %>
 
   <% end %>
 
+  <h3 class="login__or">or with</h3>
 
-  <%= link_to('Log in with Facebook!', '/auth/facebook') %>
+  <%= link_to('Log in with Facebook', '/auth/facebook', class: 'btn btn__login btn__login--facebook') %>
+  <%= link_to('Log in with Google', '/auth/facebook', class: 'btn btn__login btn__login--google') %>
 
 </div>
