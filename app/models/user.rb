@@ -11,6 +11,6 @@ class User < ApplicationRecord
   has_many :commented_items, through: :comments, source: 'item'
 
   def email_validator
-    errors.add(:email, "Email #{email} is not valid") unless EmailAddress.valid? email
+    errors.add(:email, "#{email} is not a valid Email") unless EmailAddress.valid? email
   end
 end

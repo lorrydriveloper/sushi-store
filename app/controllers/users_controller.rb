@@ -22,7 +22,7 @@ class UsersController < ApplicationController
         session[:user_id] = @user.id
         redirect_to root_path
       else
-        flash[:error] = 'Something went wrong try again or try to login via Facebook'
+        flash[:error] = "#{@user.errors.full_messages.first} try again or Login with Social Media"
         redirect_to login_path
       end
 
