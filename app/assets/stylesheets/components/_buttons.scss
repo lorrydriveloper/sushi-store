@@ -1,0 +1,27 @@
+.btn{
+  background-color:yellow;
+  border: none;
+  text-decoration: none;
+  background: none;
+  font-family: 'Revalia';
+  cursor: pointer;
+  border-radius: 3.5rem;
+
+  &--modify{
+    text-shadow: $text-shadow;
+    background-color: yellow;
+    padding: .1rem 1.5rem;
+    border-radius: .8rem;
+  }
+  &--checkout{
+    padding: 1rem 5rem;
+    background: lightsteelblue;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-shadow: $text-shadow;
+    box-shadow: $box-shadow;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}

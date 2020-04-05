@@ -1,3 +1,39 @@
-// Place all the styles related to the orders controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.checkout{
+
+ 
+  &__container{
+    align-items: center;
+    position: relative;
+    height: calc(100vh - 10rem);
+     .new_order {
+       width: 100%;
+     }
+  }
+
+  &__header{
+    @include gradient_text($text-gradient-color);
+    text-shadow: $text-shadow;
+    font-size: 5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__item{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+      h3 {
+        font-size: 1.6rem;
+      }
+  }
+  &__grand_total{
+    position: absolute;
+    bottom: 0;
+    margin-inline: 3rem;
+    h2{
+      font-size: 3.5rem;
+    }
+  }
+
+}

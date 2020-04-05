@@ -16,7 +16,7 @@
 
   <nav class="navigation__nav">
     <ul class="navigation__list">
-    <li class="navigation__item"><%= link_to 'checkout', 'orders/ckeckout', class: 'navigation__link' %> </li>
+    <li class="navigation__item"><%= link_to 'checkout', order_checkout_path('new'), class: 'navigation__link' %> </li>
     <%= user_account %>
     <li class="navigation__item"><%= link_to 'menu', root_path, class: 'navigation__link' %> </li>
     <li class="navigation__item"><%= login_logout %></li>

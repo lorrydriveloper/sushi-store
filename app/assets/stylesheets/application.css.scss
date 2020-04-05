@@ -7,13 +7,15 @@
 @import 'base/utilities';
 
 @import 'layout/header';
-@import 'layout/main_container';
+@import 'layout/containers';
 @import 'layout/navigation';
 @import 'layout/menu';
 @import 'layout/admin_container';
 
 @import 'pages/items';
 @import 'pages/dashboard';
+@import 'pages/orders';
+
 
 
 @import 'components/buttons';
