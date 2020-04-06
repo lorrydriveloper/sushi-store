@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = current_user
-    @orders = @user.orders
+    @orders = @user.last_orders
   end
 
   def update
