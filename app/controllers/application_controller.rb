@@ -22,5 +22,9 @@ class ApplicationController < ActionController::Base
     redirect_to login_path unless logged_in?
   end
 
-  helper_method :current_user
+  def belong_to_user?(comment)
+    current_user == comment.user
+  end
+
+  helper_method :current_user, :belong_to_user?
 end
