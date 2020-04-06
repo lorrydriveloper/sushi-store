@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-
   get '/login' => 'sessions#new'
   post '/login' => 'users#create'
   get '/auth/facebook/callback' => 'sessions#create'
@@ -10,10 +9,10 @@ Rails.application.routes.draw do
   resources :orders do
     get '/checkout' => 'orders#show'
   end
-  
+
   resources :categories, only: %i[index show]
   resources :items, only: %i[index show] do
-    resources :comments
+    resources :comments, except: %i[new show]
   end
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -23,7 +22,6 @@ Rails.application.routes.draw do
     resources :categories do
       resources :items, except: %i[index]
     end
-    
   end
 
   root 'welcome#index'
