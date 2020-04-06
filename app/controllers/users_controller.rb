@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  
+  before_action :require_logged_in, only: %i[edit update]
   def create
     @user = User.find_or_create_by(email: user_params[:email])
 
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       @user.password = user_params[:password]
 
       if @user.save
-        flash[:success] = "Welcome To Shushi to You please finish your profile."
+        flash[:success] = 'Welcome To Shushi to You please finish your profile.'
         session[:user_id] = @user.id
         redirect_to edit_user_path(@user)
       else
@@ -35,12 +35,12 @@ class UsersController < ApplicationController
 
   def update
     user = current_user
-      if user.update_attributes(user_params)
-        flash[:success] = "Your Account has been succesful updated"
-      else
-        flash[:error] = "Something went wrong"
-      end
-      redirect_to edit_user_path(user)
+    if user.update_attributes(user_params)
+      flash[:success] = 'Your Account has been succesful updated'
+    else
+      flash[:error] = 'Something went wrong'
+    end
+    redirect_to edit_user_path(user)
   end
 
   private
