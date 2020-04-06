@@ -14,4 +14,8 @@ module UsersHelper
       link_to 'user account', edit_user_path(current_user), class: 'navigation__link'
     end if current_user.id
   end
+
+  def finish_edit
+    current_user.name ? 'Edit Account' : 'Finish Account'
+  end
 end
