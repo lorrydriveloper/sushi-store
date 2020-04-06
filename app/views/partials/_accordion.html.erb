@@ -1,0 +1,12 @@
+<div class="tab">
+  <input type="radio" id="rd<%= object.id %>" name="rd">
+  <label class="tab-label" for="rd<%= object.id %>">Order of <%= object.order_date %></label>
+  <div class="tab-content">
+    <ul>
+      <% object.items.each do |item| %>
+        <li><%= item.name %> - £<%= item.price %></li>
+      <% end %>
+      <li>Total Order: £<%= object.total %></li>
+    </ul>
+  </div>
+</div>
