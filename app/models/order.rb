@@ -1,19 +1,21 @@
+# frozen_string_literal: true
+
 class Order < ApplicationRecord
   belongs_to :user
   has_many :order_items
   has_many :items, through: :order_items
- 
 
-
-  def calculate_total 
+  def calculate_total
     total = 0
 
-    self.items.each do |item|
+    items.each do |item|
       total += item.price
     end
 
-    self.total = total
+    total = total
+  end
 
-
+  def order_date
+    created_at.strftime('%a %d %b at %H:%M')
   end
 end
