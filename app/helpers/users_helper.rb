@@ -11,7 +11,7 @@ module UsersHelper
 
   def user_account
     content_tag :li, class:"navigation__item" do
-      link_to 'user account', user_path(current_user), class: 'navigation__link'
+      link_to 'user account', edit_user_path(current_user), class: 'navigation__link'
     end if current_user.id
   end
 end
