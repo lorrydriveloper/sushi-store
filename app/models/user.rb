@@ -13,4 +13,8 @@ class User < ApplicationRecord
   def email_validator
     errors.add(:email, "#{email} is not a valid Email") unless EmailAddress.valid? email
   end
+
+  def last_orders
+    orders.order('created_at desc')
+  end
 end
