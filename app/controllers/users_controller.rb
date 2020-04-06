@@ -18,9 +18,9 @@ class UsersController < ApplicationController
       @user.password = user_params[:password]
 
       if @user.save
-        flash[:success] = "Welcome To Shushi to You #{@user.name}"
+        flash[:success] = "Welcome To Shushi to You please finish your profile."
         session[:user_id] = @user.id
-        redirect_to root_path
+        redirect_to edit_user_path(@user)
       else
         flash[:error] = "#{@user.errors.full_messages.first} try again or Login with Social Media"
         redirect_to login_path
@@ -29,9 +29,23 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = current_user
+  end
+
+  def update
+    user = current_user
+      if user.update_attributes(user_params)
+        flash[:success] = "Your Account has been succesful updated"
+      else
+        flash[:error] = "Something went wrong"
+      end
+      redirect_to edit_user_path(user)
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :address, :avatar)
+    params.require(:user).permit(:name, :email, :password, :address, :avatar)
   end
 end
