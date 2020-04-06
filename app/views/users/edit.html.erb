@@ -13,5 +13,16 @@
   <%= f.submit finish_edit, class: 'btn btn--login small-font' %>
   <% end %>
 
+  <div class="user__orders accordion__container">
+    <h3 class="orders__header">Last Orders</h3>
+    <div class="tabs">
+      <div class="tab">
+        <input type="radio" id="rd3" name="rd">
+        <label for="rd3" class="tab-close">Close All &times;</label>
+      </div>
+      <%= render partial: "partials/accordion", collection: @orders, as: :object %>
+    </div>
+
+  </div>
 
 </div>
