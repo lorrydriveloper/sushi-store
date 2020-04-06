@@ -10,9 +10,11 @@ Rails.application.routes.draw do
   resources :orders do
     get '/checkout' => 'orders#show'
   end
-  resources :comments
+  
   resources :categories, only: %i[index show]
-  resources :items, only: %i[index show]
+  resources :items, only: %i[index show] do
+    resources :comments
+  end
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   namespace :admin do
