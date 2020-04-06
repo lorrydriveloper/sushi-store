@@ -3,11 +3,11 @@
 class SessionsController < ApplicationController
   def new
     @user = User.new
-  render :'sessions/new.html.erb'
+    # for unknown reason it does pick the proper view
+    render :'sessions/new.html.erb'
   end
 
   def create
-
     @user = User.first_or_create(email: auth['email']) do |u|
       u.name = auth['info']['name']
       u.email = auth['info']['email']
@@ -22,7 +22,6 @@ class SessionsController < ApplicationController
     session.clear
     redirect_to root_path
   end
-  
 
   private
 
