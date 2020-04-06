@@ -1,6 +1,8 @@
 .center-flex {
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
 }
 
 .float-label{
@@ -26,14 +28,17 @@
       &+label{
         color: $light-blue;
         font-size: 1.7rem;
-        transform: translate(0rem, -3rem);
+        -webkit-transform: translate(0rem, -3rem);
+                transform: translate(0rem, -3rem);
+        -webkit-transition: all .6s;
         transition: all .6s;
       }
     }
     &:valid+label{
       color: $light-blue;
        font-size: 1.7rem;
-       transform: translate(0rem, -3rem);
+       -webkit-transform: translate(0rem, -3rem);
+               transform: translate(0rem, -3rem);
     }
 
   }

@@ -3,7 +3,8 @@
 
  
   &__container{
-    align-items: center;
+    -webkit-box-align: center;
+            align-items: center;
     position: relative;
     height: calc(100vh - 10rem);
      .new_order {
@@ -20,9 +21,13 @@
 
   &__item{
     margin: 1rem;
+    display: -webkit-box;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
       h3 {
         font-size: 1.6rem;
       }
@@ -31,7 +36,10 @@
     position: absolute;
     bottom: 0;
     margin-inline: 3rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
     h2{
+      margin-bottom: 1rem;
       font-size: 3.5rem;
     }
   }
