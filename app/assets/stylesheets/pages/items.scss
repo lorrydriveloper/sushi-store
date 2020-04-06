@@ -1,5 +1,23 @@
 .item-info {
   height: calc(100vh - 26rem);
+  font-size: 1.8rem;
+
+  &__detail{
+    position: absolute;
+    font-size: 2rem;
+    z-index: 20;
+    background: $trans-white;
+    padding: 1rem;
+    border-radius: 2rem;
+    bottom: 36rem;
+    &--price{
+      
+      right: 1rem;
+    }
+     &--pieces {
+       left: 1rem;
+     }
+  }
 
   &__img {
     width: -moz-available;
@@ -19,7 +37,7 @@
 
     .description {
       font-size: 2rem;
-      height: 20rem;
+      height: 17.5rem;
       overflow-y: scroll;
     }
 

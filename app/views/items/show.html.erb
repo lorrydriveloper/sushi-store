@@ -2,11 +2,12 @@
 
 <%= content_tag :div, class: 'item-info' do %>
   <%= image_tag @item.image, class: 'item-info__img' %>
-  <%= content_tag :div,@item.price ,class: 'item-info__price' %>
-  <%= content_tag :div,@item.pieces ,class: 'item-info__price' %>
+  <%= content_tag :div,"£ #{@item.price}" ,class: 'item-info__detail item-info__detail--price' %>
+  <%= content_tag :div,"#{@item.pieces}P" ,class: 'item-info__detail item-info__detail--pieces' %>
   <%= content_tag :div, class: 'item-info__container' do %>
     <%= content_tag :div, @item.name, class: 'name' %>
     <%= content_tag :div, @item.description, class: 'description' %>
+    <%= link_to pluralize(@item.comments.size, 'comment'), item_comments_path( @item )%>
     <%= form_tag Order.new, remote: true , class: 'counter' do %>
     <%= content_tag :div, class:'counter__container' do %>
     <%= content_tag :div, '-', class:'value-button', id: 'decrease', onclick:"decreaseValue()" %>
