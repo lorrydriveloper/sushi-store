@@ -1,0 +1,20 @@
+<%= render 'partials/header' %>
+
+<div class="flex-container comments__container">
+    <%= form_for [@item, @comment], html:{class:'comments__form'} do |f| %>
+        <%= f.hidden_field :user_id %>
+        <%= f.hidden_field :item_id %>
+        <%= f.label :comment, "write your comment" %>
+         <%= f.text_area :comment %>
+      <%= f.submit %>
+
+    <% end %>
+
+  <% @comments.each do |comment| %>
+    <div class="comment">
+      <%= comment.comment %> - <%= comment.user.name %> 
+      <%= crud_buttons(comment) %> 
+    </div>
+    
+  <% end %>
+</div>
