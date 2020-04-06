@@ -5,41 +5,7 @@
           align-items: center;
 }
 
-.float-label{
-  position: relative;
-  & label{
-    position: absolute;
-    left: 3.6rem;
-    top: 3rem;
-    font-size: 2.5rem;
-    color: $grey;
-  }
-  & input{
-    font-size: 2.5rem;
-    margin: 2.5rem;
-    padding: .5rem;
-    border: none;
-    background-color: $dark-color;
-    border-radius: 1.6rem;
-    color: white;
-    
-    &:focus{
-      border: 1px solid $light-blue;
-      &+label{
-        color: $light-blue;
-        font-size: 1.7rem;
-        -webkit-transform: translate(0rem, -3rem);
-                transform: translate(0rem, -3rem);
-        -webkit-transition: all .6s;
-        transition: all .6s;
-      }
-    }
-    &:valid+label{
-      color: $light-blue;
-       font-size: 1.7rem;
-       -webkit-transform: translate(0rem, -3rem);
-               transform: translate(0rem, -3rem);
-    }
 
-  }
+.small-font{
+  font-size: 1.8rem !important;
 }
