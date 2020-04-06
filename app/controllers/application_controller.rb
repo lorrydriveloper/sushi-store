@@ -22,6 +22,14 @@ class ApplicationController < ActionController::Base
     redirect_to login_path unless logged_in?
   end
 
+  def be_admin
+    unless current_user.admin
+      flash[:error] = 'Only admins can access to admin dashboard'
+      redirect_to root_path
+    end
+    
+  end
+
   def belong_to_user?(comment)
     current_user == comment.user
   end
