@@ -8,6 +8,7 @@
     position: relative;
     height: calc(100vh - 10rem);
      .new_order {
+       
        width: 100%;
      }
   }
@@ -20,14 +21,17 @@
   }
 
   &__item{
+
     margin: 1rem;
     display: -webkit-box;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
             flex-direction: column;
-    -webkit-box-pack: justify;
-            justify-content: space-between;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+            align-items: center;
       h3 {
         font-size: 1.6rem;
       }
@@ -35,9 +39,7 @@
   &__grand_total{
     position: absolute;
     bottom: 0;
-    margin-inline: 3rem;
-    margin-left: 3rem;
-    margin-right: 3rem;
+    @include horizontal-center;
     h2{
       margin-bottom: 1rem;
       font-size: 3.5rem;
