@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
       u.password = SecureRandom.hex
     end
     session[:user_id] = @user.id
-    @user.admin ? redirect_to(admin_dashboard_path) : redirect_to(root_path)
+    redirect_to(@user.admin ? admin_dashboard_path : root_path)
   end
 
   def destroy

@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     if user.try(:authenticate, user_params[:password])
       session[:user_id] = user.id
       flash[:success] = "Welcome back #{user.name}"
-      redirect_to root_path
+      redirect_to(user.admin ? admin_dashboard_path : root_path)
     else
       flash[:error] = 'Password do not match try to login via Facebook'
       redirect_to login_path
