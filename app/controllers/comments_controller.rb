@@ -51,6 +51,10 @@ class CommentsController < ApplicationController
 
   private
 
+  def find_item
+    @item = Item.find(params[:item_id])
+  end
+
   def find_comment
     @comment = Comment.find(params[:id])
   end
