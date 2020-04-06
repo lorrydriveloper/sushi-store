@@ -1,0 +1,17 @@
+<%= render 'partials/header' %>
+
+<div class="flex-container center-flex use">
+  <%= form_for @user, html:{class:'user__form'} do |f| %>
+  <div class="float-label">
+    <%= f.text_field :name , required: true%>
+    <%= f.label :name %>
+  </div>
+  <div class="float-label">
+    <%= f.text_field :email , required: true%>
+    <%= f.label :email %>
+  </div>
+  <%= f.submit finish_edit, class: 'btn btn--login small-font' %>
+  <% end %>
+
+
+</div>
