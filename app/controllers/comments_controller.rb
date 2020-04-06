@@ -46,7 +46,7 @@ class CommentsController < ApplicationController
     else
       flash[:error] = 'Something went wrong'
     end
-    redirect_to item_comments_path(comment.item)
+    redirect_to item_comments_path(@comment.item)
   end
 
   private
