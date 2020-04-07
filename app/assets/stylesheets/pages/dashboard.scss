@@ -23,12 +23,11 @@
 
   &__container{
   width: 100%;
-  height: calc(100vh - 12rem);
+  height: calc(100vh - 15rem);
   overflow-y: scroll;
   padding:  3rem;
-  padding-bottom: 1rem;
   display: grid;
-   gap: 1rem;
+  gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   }
   &__stats{

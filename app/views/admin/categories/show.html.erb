@@ -1,17 +1,18 @@
-<%= render 'admin/partials/header' %>
-<div class="admin__container">
-  <h3><%= @category.name %></h3>
+
+<div class="new">
+  <%= link_to "+ Add item to category #{@category.name.upcase}", new_admin_category_item_path(@category), class:'btn btn-crud btn-crud--new'%>
+</div>
+  <div class="dashboard__container">
 
 <% @items.each do |item| %>
-  <li>
-  <%= item.name %> - 
-  <%= link_to 'show', admin_category_item_path(@category, item), class:'btn-crud' %> -
-  <%= link_to 'edit', edit_admin_category_item_path(@category, item), class:'btn-crud' %> -
-  <span><%= button_to 'destroy', admin_category_item_path(@category, item), class:'btn-crud', method: :delete %></span>
-  
-  </li>
+<div class='category-container'>
+  <h2 class='small-font'><%= item.name %></h2>
+  <div class="buttons">
+  <%= link_to 'show', admin_category_item_path(@category, item), class:'btn btn-crud btn-crud--edit' %>
+  <%= link_to 'edit', edit_admin_category_item_path(@category, item), class:'btn btn-crud btn-crud--show' %>
+  <%= button_to 'destroy', admin_category_item_path(@category, item), class:'btn btn-crud btn-crud--delete', method: :delete %>
+     </div>
+  </div>
  
 <% end %>
-
-<%= link_to 'new', new_admin_category_item_path(@category), class:'btn-crud'%>
 </div>
