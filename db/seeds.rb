@@ -1,7 +1,8 @@
 # frozen_string_literal: true
+Order.destroy_all
 Item.destroy_all
 Category.destroy_all
-Order.destroy_all
+
 
 User.create(email:'Webmaster@gmail.com', password:'0000', admin:true, name:'Pedro')
 
