@@ -1,3 +1,14 @@
-<div class="admin__container">
-  <%= render 'admin/partials/header' %>
+<div class="dashboard__container">
+
+<% @items.each do |item| %>
+<div class='category-container'>
+  <h2 class='small-font'><%= item.name %></h2>
+  <div class="buttons">
+  <%= link_to 'show', root_path, class:'btn btn-crud btn-crud--edit' %>
+  <%= link_to 'edit',root_path , class:'btn btn-crud btn-crud--show' %>
+  <%= button_to 'destroy',root_path , class:'btn btn-crud btn-crud--delete', method: :delete %>
+     </div>
+  </div>
+ 
+<% end %>
 </div>
