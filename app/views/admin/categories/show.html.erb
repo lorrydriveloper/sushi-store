@@ -1,7 +1,6 @@
+<%= render 'admin/partials/header' %>
 <div class="admin__container">
-  <%= render 'admin/partials/header' %>
-</div>
-<h3><%= @category.name %></h3>
+  <h3><%= @category.name %></h3>
 
 <% @items.each do |item| %>
   <li>
@@ -15,3 +14,4 @@
 <% end %>
 
 <%= link_to 'new', new_admin_category_item_path(@category), class:'btn-crud'%>
+</div>
