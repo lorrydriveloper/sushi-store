@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  validates :email, presence: true, uniqueness: true, case_sensitive: false
+  validates :email, presence: true, uniqueness: true
+  before_validation :normalize_email
   validate :email_validator
   has_secure_password
 
@@ -17,4 +18,10 @@ class User < ApplicationRecord
   def last_orders
     orders.order('created_at desc')
   end
+
+  # normalize email before is pushed to DB that way all emails in DB are downcase.
+  def normalize_email
+    self.email = email.downcase.strip
+  end
+
 end
