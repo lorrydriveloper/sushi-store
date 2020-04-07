@@ -3,23 +3,22 @@
 module Admin
   class ItemsController < AdminController
     before_action :find_item, except: %i[index new create]
+    before_action :find_category, only: %i[new edit create]
 
-    def index 
+    def index
       @items = Item.all
     end
+
     def show; end
 
     def new
-      @category = Category.find(params[:category_id])
-      @item = Item.new.tap { |i| i.category = @category }
+      @item = @category.items.build
     end
 
-    def edit
-      @category = Category.find(params[:category_id])
-    end
+    def edit; end
 
     def create
-      @item = Item.new(item_params)
+      @item = @category.items.build(item_params)
       if @item.save
         flash[:success] = 'Item successfully created'
         redirect_to admin_category_path @item.category
@@ -52,16 +51,20 @@ module Admin
 
     def item_params
       img_upload(params)
-      params.require(:item).permit(:name, :pieces, :price, :image, :description, :category_id)
+      params.require(:item).permit(:name, :pieces, :price, :image, :description)
     end
 
     def img_upload(params)
       img = Cloudinary::Uploader.upload(params[:item][:image])
       params[:item][:image] = img['url']
     end
-    
+
     def find_item
       @item = Item.find(params[:id])
+    end
+
+    def find_category
+      @category = Category.find(params[:category_id])
     end
   end
 end
