@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  validates :email, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true, case_sensitive: false
   validate :email_validator
   has_secure_password
 
