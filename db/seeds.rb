@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 Item.destroy_all
 Category.destroy_all
+Order.destroy_all
+
+User.create(email:'Webmaster@gmail.com', password:'0000', admin:true, name:'Pedro')
 
 
 Category.create(name: 'popular')
