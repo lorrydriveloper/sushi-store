@@ -55,8 +55,10 @@ module Admin
     end
 
     def img_upload(params)
-      img = Cloudinary::Uploader.upload(params[:item][:image])
-      params[:item][:image] = img['url']
+      if params[:item][:image]
+        img = Cloudinary::Uploader.upload(params[:item][:image])
+        params[:item][:image] = img['url']
+      end
     end
 
     def find_item
