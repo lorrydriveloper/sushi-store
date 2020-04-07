@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def tyr_create(user)
+  def try_create(user)
     user.password = user_params[:password]
     if user.save
       flash[:success] = 'Welcome To Sushi to You please finish your profile.'
