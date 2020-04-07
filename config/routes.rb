@@ -22,6 +22,9 @@ Rails.application.routes.draw do
     resources :categories do
       resources :items, except: %i[index]
     end
+    resources :users, only: %i[index]
+    resources :comments, only: %i[index]
+    resources :orders, only: %i[index]
   end
 
   root 'welcome#index'
