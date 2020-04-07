@@ -1,13 +1,17 @@
-<div class="admin__container">
-  <%= render 'admin/partials/header' %>
+<div class="new">
+  <%= link_to '+ New Category', new_admin_category_path,class:'btn btn-crud btn-crud--new'%>
 </div>
-<% @categories.each do |category| %>
-  <li>
-     <h3><%= category.name %></h3>
-     <%= link_to 'edit',edit_admin_category_path(category), class:'btn-crud' %>
-     <%= link_to 'show', admin_category_path(category),class:'btn-crud'%>
-     <%= button_to 'destroy', admin_category_path(category), method: 'delete', class:'btn-crud' %>
-  </li>
-<% end %>
+<div class="dashboard__container">
+  <% @categories.each do |category| %>
+  <div class='category-container'>
+    <h2><%= category.name %></h2>
+    <div class="buttons">
+      <%= link_to 'edit',edit_admin_category_path(category), class:' btn btn-crud btn-crud--edit' %>
+      <%= link_to 'show', admin_category_path(category),class:'btn btn-crud btn-crud--show'%>
+      <%= button_to 'destroy', admin_category_path(category), method: 'delete', class:'btn btn-crud btn-crud--delete' %>
 
-<%= link_to 'new', new_admin_category_path,class:'btn-crud'%>
+    </div>
+  </div>
+  <% end %>
+
+</div>
