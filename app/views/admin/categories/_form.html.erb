@@ -1,11 +1,14 @@
-<%= form_for category, url:url do |f| %>
-  <div class="float_label">
+
+<%= form_for category, url:url, html:{class:'crud-form'} do |f| %>
+  <div class="float-label">
     <%= f.text_field :name %>
   <%= f.label :name %>
   </div>
-  <div class="float_label">
+  <div class="float-label">
     <%= f.text_field :icon %>
     <%= f.label :icon %>
   </div>
-  <%= f.submit %>
+  <%= f.submit class:'btn btn-crud'%>
+
+
 <% end %>
