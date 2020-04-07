@@ -34,6 +34,7 @@
     font-size: 3rem;
     text-align: center;
     text-transform: uppercase;
+    margin-bottom: 2rem;
   }
   
 }
@@ -56,10 +57,45 @@
     -webkit-box-pack: center;
             justify-content: center;
     background-color: $clouds;
-    height: 50%;
+    min-height: 50%;
+    max-width: 100%;
     padding: 2rem;
     & .float-label input{
       font-size: 1.6rem;
+    }
+    & .float-label label {
+      font-size: 1.5rem;
+    }
+    & #item_image{
+      visibility: hidden;
+      & + label{
+     background-color: black;
+     font-size: 2rem;
+     padding: 1rem 4rem;
+     transform: translate(-2rem, -3rem);
+     border-radius: 24px;
+     text-align: center;
+     cursor: pointer;
+      }
+    }
+
+    & #item_description {
+      width: 100%;
+      height: 10rem;
+      color: white;
+      background: black;
+      padding: 1.5rem;
+      border: none;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      resize: none;
+
+      & + label{
+        color: #00d4fff4;
+        font-size: 1.7rem;
+        -webkit-transform: translate(0rem, -5.2rem);
+        transform: translate(0rem, -5.2rem);
+      }
     }
 }
 }
