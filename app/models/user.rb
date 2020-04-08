@@ -19,9 +19,19 @@ class User < ApplicationRecord
     orders.order('created_at desc')
   end
 
+  def total
+    sum = 0
+    orders.each{ |o| sum += o.total }
+    sum.round(2)
+  end
+
   # normalize email before is pushed to DB that way all emails in DB are downcase.
   def normalize_email
     self.email = email.downcase.strip
+  end
+
+  def avatar_or_default
+    avatar || 'https://robohash.org/my-own-slug.bmp?size=50x50&set=set1&bgset=bg1'
   end
 
 end
