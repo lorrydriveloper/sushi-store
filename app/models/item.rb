@@ -6,4 +6,8 @@ class Item < ApplicationRecord
   has_many :commentors, through: :comments, source: 'user'
 
 
+
+  def last_comments
+    comments.order('created_at DESC')
+  end
 end

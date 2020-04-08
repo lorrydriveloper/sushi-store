@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   before_action :find_item, only: %i[index edit]
 
   def index
-    @comments = @item.comments.all
+    @comments = @item.last_comments
     @comment = current_user.comments.build(item: @item)
   end
 
@@ -23,17 +23,18 @@ class CommentsController < ApplicationController
 
   def edit
     if belong_to_user?(@comment)
-      @comments = @item.comments.all
+      @comments = @item.last_comments
       render 'index'
     else
       flash[:error] = "Sorry that item don't belong to you"
-      redirect_to item_comments_path
+      redirect_to item_comments_path(@comment.item)
     end
   end
 
   def update
     if @comment.update_attributes(comment_params)
       flash[:success] = 'Comment was successfully updated'
+      redirect_to item_comments_path(@comment.item)
     else
       flash[:error] = 'Something went wrong'
       render 'index'
