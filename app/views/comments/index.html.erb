@@ -1,20 +1,21 @@
 <%= render 'partials/header' %>
 
-<div class="flex-container comments__container">
-    <%= form_for [@item, @comment], html:{class:'comments__form'} do |f| %>
-        <%= f.hidden_field :user_id %>
-        <%= f.hidden_field :item_id %>
-        <%= f.label :comment, "write your comment" %>
-         <%= f.text_area :comment %>
-      <%= f.submit %>
-
-    <% end %>
-
-  <% @comments.each do |comment| %>
-    <div class="comment">
-      <%= comment.comment %> - <%= comment.user.name %> 
-      <%= crud_buttons(comment) %> 
-    </div>
-    
+<div class="flex-container center-flex">
+  <%= form_for [@item, @comment], html:{class:'comments__form'} do |f| %>
+  <%= f.hidden_field :user_id %>
+  <%= f.hidden_field :item_id %>
+  <%= f.label :comment, "write your comment" %>
+  <%= f.text_area :comment %>
+  <%= f.submit  class: 'btn btn--login small-font' %>
   <% end %>
 </div>
+  <div class="comments__container">
+    <% @comments.each do |comment| %>
+      <div class="comment">
+      <h3><%= comment_by(comment)  %></h3>
+      <div class="comment__content"><%= comment.comment %></div>
+        <div class="buttons"><%= crud_buttons(comment) %></div>
+      </div>
+    <% end %>
+  
+  </div>
