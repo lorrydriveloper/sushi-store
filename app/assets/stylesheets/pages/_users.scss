@@ -18,6 +18,38 @@
       margin-bottom: 1.5rem;
     }
   }
+  &__container{
+    background-color: $clouds;
+    padding: 1rem;
+    box-shadow: $box-shadow;
+    display: -webkit-box;
+    display: flex;
+    height: 15rem;
+    border-radius: 5px;
+
+  }
+
+  &__avatar img{
+    width: 5rem;
+    height: 5rem;
+    margin-right: 1rem;
+    border: 2px blue solid;
+    background-color: grey;
+    border-radius: 50%;
+  }
+  &__info{
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    text-align: center;
+    -webkit-box-pack: space-evenly;
+            justify-content: space-evenly;
+    width: calc(100% - 5rem);
+    overflow-wrap: anywhere;
+
+  }
 
 
 }

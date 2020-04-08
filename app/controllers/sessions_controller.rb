@@ -8,12 +8,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.first_or_create(email: auth['email']) do |u|
+    @user = User.find_or_create_by(email: auth['info']['email']) do |u|
       u.name = auth['info']['name']
       u.email = auth['info']['email']
       u.avatar = auth['info']['image']
       u.password = SecureRandom.hex
     end
+    flash[:success] = "Welcome to Sushi to You #{@user.name}"
     session[:user_id] = @user.id
     redirect_to(@user.admin ? admin_dashboard_path : root_path)
   end
