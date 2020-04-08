@@ -1,0 +1,18 @@
+<div class="dashboard__container">
+  <% @users.each do |user| %>
+  <div class="user__container">
+    <div class="user__avatar">
+      <img src="<%= user.avatar_or_default %>" alt="user avatar">
+    </div>
+    <div class="user__info">
+      <h3>Email</h3>
+      <h4><%= user.email %></h4>
+      <h3>Name</h3>
+      <h4><%= user.name %></h4>
+      <h3>Total spend</h3>
+      <h4>£ <%= user.total %></h4>
+    </div>
+  </div>
+  <% end %>
+
+</div>
