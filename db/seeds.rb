@@ -5,7 +5,14 @@ Category.destroy_all
 User.destroy_all
 
 User.create(email:'Webmaster@gmail.com', password:'0000', admin:true, name:'Pedro')
-
+50.times do
+  User.create(
+    email: Faker::Internet.email,
+    password: Faker::Internet.password,
+    name: Faker::Name.name,
+    avatar: Faker::Avatar.image
+  )
+end
 
 Category.create(name: 'popular')
 Category.create(name: 'nigiri')
