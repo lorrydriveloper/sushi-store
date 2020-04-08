@@ -24,7 +24,7 @@
     padding: 3rem;
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
   }
 
   &__stats {
@@ -32,25 +32,49 @@
     width: 100%;
     text-align: center;
     text-transform: capitalize;
+    height: fit-content;
 
     h3 {
 
-      font-size: 1.6rem;
+      font-size: 2.1rem;
+    }
 
+    h4 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    h5 {
+      font-size: 2rem;
     }
 
     div {
       width: 50%;
       height: 50%;
-      border: 1px solid red;
       float: left;
+      // @include gradient-border(to top)
     }
 
     & .stat__container {
       width: 100%;
-      height: calc(100% - 20px);
+      height: calc(100% - 25px);
+
     }
+
+    & .users {
+
+      
+      box-shadow: -6px -6px 4px -3px rgba(0, 0, 0, 0.62) inset;
+     
+    }
+    .revenue {
+box-shadow: 6px 6px 4px -3px rgba(0, 0, 0, 0.62) inset;
+      
+    }
+
+   
   }
+
 
 
 }

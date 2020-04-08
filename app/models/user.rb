@@ -12,7 +12,9 @@ class User < ApplicationRecord
   has_many :commented_items, through: :comments, source: 'item'
 
   def email_validator
-    errors.add(:email, "#{email} is not a valid Email") unless EmailAddress.valid? email
+    unless EmailAddress.valid? email
+      errors.add(:email, "#{email} is not a valid Email")
+    end
   end
 
   def last_orders
@@ -21,7 +23,7 @@ class User < ApplicationRecord
 
   def total
     sum = 0
-    orders.each{ |o| sum += o.total }
+    orders.each { |o| sum += o.total }
     sum.round(2)
   end
 
@@ -34,4 +36,7 @@ class User < ApplicationRecord
     avatar || 'https://robohash.org/my-own-slug.bmp?size=50x50&set=set1&bgset=bg1'
   end
 
+  def self.by_date(start_date, finish_date)
+    where(created_at: start_date..finish_date)
+  end
 end

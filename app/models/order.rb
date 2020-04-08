@@ -20,4 +20,10 @@ class Order < ApplicationRecord
   def self.last_orders
     order('created_at desc')
   end
+
+  def self.by_date(start_date, finish_date)
+      where(created_at: start_date..finish_date)
+  end
+
+
 end
