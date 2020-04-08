@@ -1,51 +1,57 @@
-.admin{
+.admin {
 
-  &__container{
+  &__container {
     height: 93vh;
-    background-color:$grey;
+    background-color: $grey;
     margin-left: 8rem;
   }
-  &__header{
+
+  &__header {
     background-color: yellow;
     height: 8rem;
   }
-  &__heading{
-   font-size: 3rem;
-   @include gradient_text($text-gradient-color);
-   text-align: center;
-   padding: 1.5rem 0;
-   text-shadow: $text-shadow;
+
+  &__heading {
+    font-size: 3rem;
+    @include gradient_text($text-gradient-color);
+    text-align: center;
+    padding: 1.5rem 0;
+    text-shadow: $text-shadow;
   }
 
 }
 
-.dashboard{
+.dashboard {
 
-  &__container{
-  width: 100%;
-  height: calc(100vh - 15rem);
-  overflow-y: scroll;
-  padding:  3rem;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  &__container {
+    width: 100%;
+    height: calc(100vh - 15rem);
+    overflow-y: scroll;
+    padding: 3rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   }
-  &__stats{
+
+  &__stats {
     background-color: white;
     width: 100%;
-text-align: center;
- text-transform: capitalize;
-    h3{
-      
+    text-align: center;
+    text-transform: capitalize;
+
+    h3 {
+
       font-size: 1.6rem;
-     
+
     }
-    div{
+
+    div {
       width: 50%;
       height: 50%;
       border: 1px solid red;
       float: left;
     }
+
     & .stat__container {
       width: 100%;
       height: calc(100% - 20px);

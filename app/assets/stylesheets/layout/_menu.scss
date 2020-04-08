@@ -17,7 +17,10 @@
       width: 10rem;
       display: -webkit-box;
       display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
       flex-direction: column;
+      -webkit-box-align: center;
       align-items: center;
 
     }
@@ -41,7 +44,7 @@
   &__header {
     font-family: 'Revalia';
     font-size: 3rem;
-    padding-bottom: .5rem;
+    margin-bottom: 1rem
   }
 
   .items {
@@ -92,8 +95,11 @@
 
         &--pieces {
           z-index: 2;
+          display: -webkit-box;
           display: flex;
+          -webkit-box-pack: center;
           justify-content: center;
+          -webkit-box-align: center;
           align-items: center;
           height: 4.5rem;
           width: 4.5rem;
@@ -114,6 +120,7 @@
       bottom: 0;
       width: 100%;
       height: 40%;
+      background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(29.69%, #FFFFFF));
       background: linear-gradient(180deg, transparent 0%, #FFFFFF 29.69%);
       border-radius: 0px 0px 30px 30px;
 

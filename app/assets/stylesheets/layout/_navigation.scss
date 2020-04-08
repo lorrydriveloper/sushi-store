@@ -1,49 +1,49 @@
 .navigation {
-    position: absolute;
-    width: 10rem;
-    height: 10rem;
-    right: 0;
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  right: 0;
 
   &__checkbox {
     display: none;
   }
 
-    &__items {
-      position: absolute;
-      display: -webkit-box;
-      display: flex;
-      -webkit-box-pack: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      align-items: center;
-      height: 40%;
-      width: 40%;
-      border-radius: 50%;
-      z-index: 40;
-      bottom: 1rem;
-      background-color: wheat;
+  &__items {
+    position: absolute;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 40%;
+    width: 40%;
+    border-radius: 50%;
+    z-index: 40;
+    bottom: 1rem;
+    background-color: wheat;
 
-      & p {
-        font-size: 3rem;
-      }
+    & p {
+      font-size: 3rem;
     }
+  }
 
   &__background {
-      position: absolute;
-      left: 2.5rem;
-      top: 1.5rem;
-      background-image: $btn-background;
-      height: 6rem;
-      width: 6rem;
-      border-radius: 50%;
-      z-index: 10;
- 
+    position: absolute;
+    left: 2.5rem;
+    top: 1.5rem;
+    background-image: $btn-background;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    z-index: 10;
+
     -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
- 
+
     transition: -webkit-transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
- 
+
     transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
- 
+
     transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1), -webkit-transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
   }
 
@@ -106,7 +106,7 @@
       background-position: 100%;
       color: yellow;
       -webkit-transform: translateX(1rem);
-              transform: translateX(1rem);
+      transform: translateX(1rem);
     }
 
     span {
@@ -117,7 +117,7 @@
 
   &__checkbox:checked~&__background {
     -webkit-transform: scale(80);
-            transform: scale(80);
+    transform: scale(80);
   }
 
   &__checkbox:checked~&__nav {
@@ -173,13 +173,13 @@
     &::before {
       top: 0;
       -webkit-transform: rotate(135deg);
-              transform: rotate(135deg);
+      transform: rotate(135deg);
     }
 
     &::after {
       top: 0;
       -webkit-transform: rotate(-135deg);
-              transform: rotate(-135deg);
+      transform: rotate(-135deg);
     }
   }
 }

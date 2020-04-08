@@ -9,14 +9,16 @@
   width: 75%;
   text-align: center;
 
-  &.success{
+  &.success {
     background: green;
   }
+
   &.error {
     background: red;
   }
-   &.warning {
-     background: orangered;
-   }
+
+  &.warning {
+    background: orangered;
+  }
 
 }

@@ -5,77 +5,86 @@
   width: 100%;
   text-align: center;
 }
-.buttons{
+
+.buttons {
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: space-evenly;
-          justify-content: space-evenly;
+  justify-content: space-evenly;
 
 }
-.category_name{
+
+.category_name {
   font-size: 2.5rem;
   padding: 1rem;
   text-align: center;
 }
 
 .category-container {
-    padding: 1rem;
-    background-color: whitesmoke;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-            flex-direction: column;
-    -webkit-box-pack: space-evenly;
-            justify-content: space-evenly;
-    box-shadow: $box-shadow;
-    border-radius: 2rem;
+  padding: 1rem;
+  background-color: whitesmoke;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: space-evenly;
+  justify-content: space-evenly;
+  box-shadow: $box-shadow;
+  border-radius: 2rem;
+
   h2 {
     font-size: 3rem;
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 2rem;
   }
-  
+
 }
 
-.form-container{
+.form-container {
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
-          justify-content: center;
+  justify-content: center;
   -webkit-box-align: center;
-          align-items: center;
+  align-items: center;
   width: 100%;
   height: 100%;
-  .crud-form{
+
+  .crud-form {
     display: -webkit-box;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-            flex-direction: column;
+    flex-direction: column;
     -webkit-box-pack: center;
-            justify-content: center;
+    justify-content: center;
     background-color: $clouds;
     min-height: 50%;
     max-width: 100%;
     padding: 2rem;
-    & .float-label input{
+
+    & .float-label input {
       font-size: 1.6rem;
     }
+
     & .float-label label {
       font-size: 1.5rem;
     }
-    & #item_image{
+
+    & #item_image {
       visibility: hidden;
-      & + label{
-     background-color: black;
-     font-size: 2rem;
-     padding: 1rem 4rem;
-     transform: translate(-2rem, -3rem);
-     border-radius: 24px;
-     text-align: center;
-     cursor: pointer;
+
+      &+label {
+        background-color: black;
+        font-size: 2rem;
+        padding: 1rem 4rem;
+        -webkit-transform: translate(-2rem, -3rem);
+        transform: translate(-2rem, -3rem);
+        border-radius: 24px;
+        text-align: center;
+        cursor: pointer;
       }
     }
 
@@ -90,12 +99,12 @@
       border-radius: 10px;
       resize: none;
 
-      & + label{
+      &+label {
         color: #00d4fff4;
         font-size: 1.7rem;
         -webkit-transform: translate(0rem, -5.2rem);
         transform: translate(0rem, -5.2rem);
       }
     }
-}
+  }
 }

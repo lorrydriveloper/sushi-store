@@ -2,6 +2,7 @@
   display: -webkit-box;
   display: flex;
   margin-top: 2rem;
+  -webkit-box-pack: justify;
   justify-content: space-between;
 
   &__container {
@@ -13,8 +14,11 @@
     align-items: center;
 
     .value-button {
+      display: -webkit-box;
       display: flex;
+      -webkit-box-pack: center;
       justify-content: center;
+      -webkit-box-align: center;
       align-items: center;
       font-size: 4rem;
       width: 4rem;

@@ -38,7 +38,7 @@
   }
 
   &-crud {
- 
+
     font-size: 1.2rem;
     border-radius: .5rem;
     padding: 1rem;
@@ -51,9 +51,10 @@
       display: block;
       font-size: 1.8rem;
     }
-      &--show {
-        background-color: $crud-show;
-      }
+
+    &--show {
+      background-color: $crud-show;
+    }
 
     &--edit {
       background-color: $crud-edit;

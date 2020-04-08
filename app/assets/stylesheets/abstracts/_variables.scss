@@ -2,28 +2,28 @@
 
 $trans-white: #f5f5f5b9;
 $menu-btn-color: #000;
-$btn-background: radial-gradient(circle, rgba(71, 63, 251, 1) 0%, rgba(160, 84, 171, 1) 46%, rgba(183, 143, 79, 1) 61%, rgba(252, 70, 95, 1) 100%);
+$btn-background: radial-gradient(circle, #473ffb 0%, #a054ab 46%, #b78f4f 61%, #fc465f 100%);
 
 $text-gradient-color: linear-gradient(rgba(2, 0, 36, 1) 11%,
   #03012c 27%,
   #090979 58%,
   #0386cbf3 86%,
   #00d4fff4 94%);
-$text-gradient-color-small: linear-gradient(16deg, rgba(2, 0, 36, 1) 22%, rgba(0, 212, 255, 0.9308765742625175) 100%);
+$text-gradient-color-small: linear-gradient(16deg, #020024 22%, #00d4ffed 100%);
 
-$text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
-0px 4px 4px rgba(0, 0, 0, 0.25),
-0px 4px 4px rgba(0, 0, 0, 0.25);
-$box-shadow: 4px 5px 15px rgba(0, 0, 0, 0.25),
-0px 4px 4px rgba(0, 0, 0, 0.25);
+$text-shadow: 0px 4px 4px #00000040,
+0px 4px 4px #00000040,
+0px 4px 4px #00000040;
+$box-shadow: 4px 5px 15px #00000040,
+0px 4px 4px #00000040;
 
 $grey: lightgrey;
 $light-blue:#00d4fff4;
 $dark-color:black;
-  $midnight: #2c3e50;
-  $clouds: #ecf0f1;
+$midnight: #2c3e50;
+$clouds: #ecf0f1;
 
-  $crud-new:#1cd81c;
-  $crud-delete:#f02020;
-  $crud-edit:#f0cf17;
-  $crud-show:#13a4f8;
+$crud-new:#1cd81c;
+$crud-delete:#f02020;
+$crud-edit:#f0cf17;
+$crud-show:#13a4f8;
