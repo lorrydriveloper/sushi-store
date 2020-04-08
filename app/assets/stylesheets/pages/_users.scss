@@ -1,7 +1,15 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.orders__header {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
 .user {
+
+   
 
   &__form {
     margin-bottom: 2rem;
@@ -12,11 +20,7 @@
     height: calc(100vh - 34rem) !important;
     overflow-x: auto;
 
-    & .orders__header {
-      font-size: 3rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
+   
   }
   &__container{
     background-color: $clouds;
