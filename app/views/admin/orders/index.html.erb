@@ -1,0 +1,11 @@
+<div class="accordion__container">
+    <h3 class="orders__header">Last Orders</h3>
+    <div class="tabs">
+      <div class="tab">
+        <input type="radio" id="close_tabs" name="rd">
+        <label for="close_tabs" class="tab-close">Close All &times;</label>
+      </div>
+      <%= render partial: "partials/accordion", collection: @orders, as: :object %>
+    </div>
+
+  </div>
