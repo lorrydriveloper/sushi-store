@@ -16,4 +16,8 @@ class Order < ApplicationRecord
   def order_date
     created_at.strftime('%a %d %b at %H:%M')
   end
+  
+  def self.last_orders
+    order('created_at desc')
+  end
 end
