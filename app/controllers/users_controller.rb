@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :require_logged_in, only: %i[edit update]
 
   def create
-    @user = User.find_or_create_by(email: user_params[:email])
+    @user = User.find_or_create_by(email: user_params[:email].downcase)
 
     if @user.valid?
       try_authenticate(@user)
