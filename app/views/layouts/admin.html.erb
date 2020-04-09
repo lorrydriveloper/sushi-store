@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Revalia&display=swap" rel="stylesheet">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <%= cloudinary_js_config %>
 </head>
 
 <body>
@@ -29,5 +28,16 @@
 
 
 </body>
+<script>
+  node = document.getElementById("close");
 
+if (node) {
+       node.addEventListener('click', function () {
+    document.querySelector('.flash').style.display = 'none'
+  })
+  setTimeout(function() {
+    document.querySelector('.flash').style.opacity = '0';
+}, 5000);
+}
+</script>
 </html>
