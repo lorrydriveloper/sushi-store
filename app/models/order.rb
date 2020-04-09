@@ -10,7 +10,7 @@ class Order < ApplicationRecord
     items.each do |item|
       total += item.price
     end
-    self.total = total
+    self.total = total.round(2)
   end
 
   def order_date

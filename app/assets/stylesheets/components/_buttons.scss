@@ -6,7 +6,7 @@
   cursor: pointer;
   border-radius: 3.5rem;
   text-shadow: $text-shadow;
-
+  transition: all .5s;
 
   &--modify {
     background-color: yellow;
@@ -44,6 +44,11 @@
     padding: 1rem;
     text-transform: capitalize;
     background-color: aquamarine;
+    box-shadow: $box-shadow;
+
+    &:hover{
+      transform: scale(1.05);
+    }
 
     &--new {
       background-color: $crud-new;
@@ -114,12 +119,13 @@
         background-color: #5B7BD5;
         background-image: -webkit-gradient(linear, left top, left bottom, from(#5B7BD5), to(#4864B1));
         background-image: linear-gradient(#5B7BD5, #4864B1);
+        transform: scale(1.05);
 
       }
     }
 
     &--google {
-      background: #DD4B39;
+      background-color: #DD4B39;
 
       &:before {
         border-right: #BB3F30 1px solid;
@@ -128,7 +134,8 @@
 
       &:hover,
       &:focus {
-        background: #E74B37;
+        transform: scale(1.05);
+        background-color:lighten(#DD4B39, 5%);
       }
     }
   }

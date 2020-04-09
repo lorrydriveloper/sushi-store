@@ -9,6 +9,7 @@
 svg {
   height: 100%;
   width: 100%;
+  fill: white;
 
 }
 
@@ -23,8 +24,9 @@ nav.main-menu.expanded {
 }
 
 .main-menu {
-  background: red;
-  position: absolute;
+  background:black;
+  position: fixed;
+  top: 8rem;
   bottom: 0;
   height: calc(100vh - 8rem);
   left: 0;
@@ -44,6 +46,10 @@ nav.main-menu.expanded {
   display: block;
   width: 25rem;
   margin-top: 1.5rem;
+  &:hover{
+    transform: scale(1.05);
+    background-color:lighten($black, 20%);
+  }
 }
 
 .main-menu li>a {
@@ -51,7 +57,6 @@ nav.main-menu.expanded {
   display: table;
   border-collapse: collapse;
   border-spacing: 0;
-  color: var(--contrast-color);
   font-family: arial;
   font-size: 1.4rem;
   text-decoration: none;
@@ -59,7 +64,7 @@ nav.main-menu.expanded {
   transform: translateZ(0) scale(1, 1);
   -webkit-transition: all .1s linear;
   transition: all .1s linear;
-
+ 
 }
 
 .main-menu .nav-text {
@@ -69,23 +74,11 @@ nav.main-menu.expanded {
   width: 170px;
   font-size: 2.5rem;
   text-transform: uppercase;
+  color: white;
 }
 
 .main-menu>ul.logout {
   position: absolute;
   left: 0;
   bottom: 0;
-}
-
-.main-menu li:hover>a,
-nav.main-menu li.active>a,
-.dropdown-menu>li>a:hover,
-.dropdown-menu>li>a:focus,
-.dropdown-menu>.active>a,
-.dropdown-menu>.active>a:hover,
-.dropdown-menu>.active>a:focus,
-.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,
-.dashboard-page nav.dashboard-menu ul li.active a {
-  color: #fff;
-  background-color: var(--color-secondary);
 }

@@ -1,7 +1,7 @@
 .admin {
 
   &__header {
-    background-color: yellow;
+    background-color:$clouds;
     height: 8rem;
   }
 
@@ -16,11 +16,11 @@
 }
 
 .dashboard {
-
+  transition: all .5s;
   &__container {
     width: 100%;
-    height: calc(100vh - 15rem);
-    overflow-y: scroll;
+    height: calc(100vh - 9rem);
+    overflow-y: auto;
     padding: 3rem;
     display: grid;
     gap: 1rem;
@@ -52,29 +52,34 @@
       width: 50%;
       height: 50%;
       float: left;
-      // @include gradient-border(to top)
     }
 
     & .stat__container {
       width: 100%;
       height: calc(100% - 25px);
 
-    }
+      & div{
+        padding: .5rem;
+      }
 
-    & .users {
-
-      
-      box-shadow: -6px -6px 4px -3px rgba(0, 0, 0, 0.62) inset;
-     
     }
-    .revenue {
-box-shadow: 6px 6px 4px -3px rgba(0, 0, 0, 0.62) inset;
-      
-    }
-
-   
   }
 
 
+
+}
+
+@media only screen and (min-width: 800px) {
+  .dashboard {
+
+    &__container{
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+
+    &__stats{
+            height: auto;
+            max-height: 50rem;
+    }
+  }
 
 }
