@@ -11,6 +11,15 @@ class User < ApplicationRecord
   has_many :comments
   has_many :commented_items, through: :comments, source: 'item'
 
+  def self.find_or_create_by_auth(auth)
+    find_or_create_by(email: auth['info']['email']) do |u|
+      u.name = auth['info']['name']
+      u.email = auth['info']['email']
+      u.avatar = auth['info']['image']
+      u.password = SecureRandom.hex
+    end
+  end
+
   def email_validator
     unless EmailAddress.valid? email
       errors.add(:email, "#{email} is not a valid Email")
