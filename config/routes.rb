@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'users#create'
-  get '/auth/facebook/callback' => 'sessions#create'
+  get '/auth/:provider/callback' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
   resources :orders do
