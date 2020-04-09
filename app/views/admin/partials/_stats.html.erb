@@ -1,0 +1,21 @@
+<div class="dashboard__stats">
+  <h3><%= date %> Stats</h3>
+  <div class="stat__container">
+    <div class="users flex-container center-flex">
+      <h4>New users</h4>
+      <h5><%= stats[:users] %></h5>
+    </div>
+    <div class="new_comments flex-container center-flex">
+      <h4>new comments</h4>
+      <h5><%= stats[:comments] %></h5>
+    </div>
+    <div class="orders flex-container center-flex">
+      <h4>Placed orders</h4>
+      <h5><%= stats[:orders] %></h5>
+    </div>
+    <div class="revenue flex-container center-flex">
+      <h4>Profit</h4>
+      <h5>£ <%= stats[:profit] %></h5>
+    </div>
+  </div>
+</div>
