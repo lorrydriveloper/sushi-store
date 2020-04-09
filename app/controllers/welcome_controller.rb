@@ -3,7 +3,7 @@
 class WelcomeController < ApplicationController
   def index
     @categories = Category.all
-    @category = Category.first
+    @category = @categories.first
     @items = @category&.items
   end
 end
