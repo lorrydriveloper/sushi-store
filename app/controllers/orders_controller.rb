@@ -31,7 +31,7 @@ class OrdersController < ApplicationController
       { v => Item.find(k) }
     end
   end
-
+  # it need to rethink and refactor this is ugly.
   def place_order(_params, cart)
     user = current_user
     ids = array_ids(cart)
