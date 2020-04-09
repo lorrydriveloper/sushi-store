@@ -1,0 +1,10 @@
+<div class="comments__container">
+    <% @comments.each do |comment| %>
+      <div class="comment">
+      <h3><%= comment_by(comment)  %></h3>
+      <div class="comment__content"><%= comment.comment %></div>
+        <div class="buttons max-width"><%= crud_buttons(comment) %></div>
+      </div>
+    <% end %>
+  
+  </div>
