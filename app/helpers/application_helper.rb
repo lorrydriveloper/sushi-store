@@ -6,4 +6,8 @@ module ApplicationHelper
       content_tag :p, session[:quantity]
     end if session[:quantity]
   end
+  
+  def root_or_admin
+    current_user.admin ? admin_dashboard_path : root_path
+  end
 end
