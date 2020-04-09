@@ -1,6 +1,7 @@
 .item-info {
   height: calc(100vh - 26rem);
   font-size: 1.8rem;
+  transition: all .5s;
 
   &__detail{
     position: absolute;
@@ -23,7 +24,7 @@
     width: -moz-available;
     width: -webkit-fill-available;
     width: fit-available;
-    height: 32rem;
+    height: 75%;
   }
 
   &__container {
@@ -51,4 +52,52 @@
     }
 
   }
+}
+
+@media only screen and (min-width: 800px) {
+  .item-info {
+    font-size: 1.8rem;
+    width: 65%;
+    height: calc(100vh - 22rem);
+    @include make_box;  
+    &__container {
+      border-radius: 3.5rem 3.5rem 1rem 1rem;
+    }
+    &__img{
+      width: 100%;
+      border-radius: 1rem 1rem 0 0 ;
+    }
+  }
+  .main-container{
+    background-color:lightgrey;
+  }
+}
+@media only screen and (min-width: 800px)and (max-height: 800px) {
+  
+  .item-info{
+  
+  &__container{
+    height: 50%;
+    & .description{
+          font-size: 1.6rem;
+          height: 30%;
+    }
+    & .name{
+      font-size: 2rem;
+    }
+  }
+
+  &__detail{
+position: absolute;
+font-size: 2rem;
+z-index: 2;
+background: #f5f5f5b9;
+padding: 1rem;
+border-radius: 2rem;
+top: 1rem;
+bottom: inherit;
+  }
+}
+
+
 }

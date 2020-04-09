@@ -9,6 +9,7 @@
 
 .user {
 
+  transition: all .5s;
    
 
   &__form {
@@ -56,4 +57,10 @@
   }
 
 
+}
+@media only screen and (min-width: 800px) {
+  .user {
+    height: calc(100vh - 22rem);
+    @include make_box;
+  }
 }

@@ -1,11 +1,12 @@
 <%= content_tag :div, class:'header' do %>
+<a href="<%= root_path %> ">
 <%= content_tag :div, class:'logo' do %>
 <%= content_tag :h1, class:'heading-primary' do %>
 <%= content_tag :span,'Sushi', class: 'heading-primary--main' %>
 <%= content_tag :span,'To You', class: 'heading-primary--sub' %>
 <% end %>
 <%= image_tag('icons/sushi-1.png', class: 'logo__icon') %>
-<% end %>
+<% end %></a>
 <div class="navigation">
   <input type="checkbox" id="navi-toggle" class="navigation__checkbox">
   <label for="navi-toggle" class='navigation__button'>

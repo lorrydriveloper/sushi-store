@@ -1,6 +1,6 @@
 <%= render 'partials/header' %>
 
-<div class="flex-container center-flex use">
+<div class="flex-container center-flex user">
   <%= form_for @user, html:{class:'user__form'} do |f| %>
   <div class="float-label">
     <%= f.text_field :name , required: true%>

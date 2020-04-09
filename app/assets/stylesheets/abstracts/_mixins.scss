@@ -17,3 +17,11 @@
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
 }
+
+@mixin make_box {
+  @include horizontal-center;
+     box-shadow: $box-shadow;
+     margin-top: 2rem;
+     border-radius: 1rem;
+     background-color: $clouds;
+}

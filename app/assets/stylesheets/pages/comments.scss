@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .comments{
-
+  transition: all .5s;
   &__container{
 margin-top: 2rem;
 padding: 1rem;
@@ -24,6 +24,8 @@ height: calc(100vh - 35rem);
       margin-left: 1rem;
       margin-right: 1rem;
       margin-top: 2rem;
+      font-size: 3rem;
+      box-shadow: $box-shadow;
     }
     & label {
       color: #00d4fff4;
@@ -54,5 +56,18 @@ height: calc(100vh - 35rem);
     font-size: 2rem;
     margin: 1rem;
   }
+
+}
+
+@media only screen and (min-width: 800px) {
+  .comments {
+    height: calc(100vh - 19rem);
+    @include make_box;
+    width: 80%;
+    & label {
+      font-size: 4rem;
+    }
+  }
+
 
 }

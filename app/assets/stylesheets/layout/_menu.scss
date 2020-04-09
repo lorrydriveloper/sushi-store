@@ -9,8 +9,6 @@
     flex-wrap: nowrap;
     overflow-x: auto;
     margin-top: .5rem;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
 
     &__container {
       height: 10rem;
@@ -48,7 +46,7 @@
   }
 
   .items {
-    height: 100vh;
+    height: calc(100vh - 25rem);
     position: relative;
     background-color: whitesmoke;
     overflow-y: scroll;
@@ -134,4 +132,21 @@
     }
   }
 
+}
+
+@media only screen and (min-width: 800px) {
+  .menu{
+ .categories {
+    justify-content: center;
+    background-color: $clouds;
+  }
+  &__header{
+    text-align: center;
+  }
+  .items {
+    height: calc(100vh - 30rem);
+  }
+
+  }
+ 
 }

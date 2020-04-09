@@ -3,6 +3,7 @@
   width: 10rem;
   height: 10rem;
   right: 0;
+  transition: all .5s;
 
   &__checkbox {
     display: none;
@@ -182,4 +183,13 @@
       transform: rotate(-135deg);
     }
   }
+}
+
+@media only screen and (min-width: 800px) {
+  .navigation {
+    top: 2rem;
+    right: 2rem;
+  }
+
+
 }

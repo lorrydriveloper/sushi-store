@@ -1,5 +1,5 @@
 .login {
-
+  transition: all .5s;
   &__form {
     position: relative;
   }
@@ -9,4 +9,13 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
+}
+
+@media only screen and (min-width: 800px) {
+  .login {
+    height: calc(100vh - 50rem);
+    @include make_box;
+  }
+
+
 }

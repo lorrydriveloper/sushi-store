@@ -35,6 +35,7 @@
             align-items: center;
       h3 {
         font-size: 1.6rem;
+        margin-bottom: 1rem;
       }
   }
   &__grand_total{
@@ -46,5 +47,14 @@
       font-size: 3.5rem;
     }
   }
+
+}
+
+@media only screen and (min-width: 800px) {
+  .checkout__container {
+    height: calc(100vh - 22rem);
+    @include make_box;
+  }
+
 
 }

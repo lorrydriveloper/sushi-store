@@ -1,6 +1,6 @@
 <%= render 'partials/header' %>
 
-<div class="flex-container center-flex">
+<div class="flex-container center-flex comments">
   <%= form_for [@item, @comment], html:{class:'comments__form'} do |f| %>
   <%= f.hidden_field :user_id %>
   <%= f.hidden_field :item_id %>
@@ -8,8 +8,7 @@
   <%= f.text_area :comment %>
   <%= f.submit  class: 'btn btn--login small-font' %>
   <% end %>
-</div>
-  <div class="comments__container">
+<div class="comments__container">
     <% @comments.each do |comment| %>
       <div class="comment">
       <h3><%= comment_by(comment)  %></h3>
@@ -19,3 +18,5 @@
     <% end %>
   
   </div>
+  
+</div>

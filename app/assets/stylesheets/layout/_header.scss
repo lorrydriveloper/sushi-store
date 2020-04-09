@@ -3,4 +3,11 @@
   height: 10rem;
   display: -webkit-box;
   display: flex;
+  background-color: $clouds;
+}
+
+@media only screen and (min-width: 800px) {
+  .header {
+    height: 15rem;
+  }
 }
