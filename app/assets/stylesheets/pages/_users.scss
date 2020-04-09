@@ -29,7 +29,6 @@
     box-shadow: $box-shadow;
     display: -webkit-box;
     display: flex;
-    height: 15rem;
     border-radius: 5px;
 
   }
@@ -62,5 +61,14 @@
   .user {
     height: calc(100vh - 22rem);
     @include make_box;
+      &__avatar img {
+        width: 7rem;
+        height: 7rem;
+
+      }
+        &__info {
+        font-size: 1.6rem;
+
+        }
   }
 }
