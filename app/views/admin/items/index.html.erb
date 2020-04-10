@@ -1,9 +1,4 @@
 <div class="dashboard__container">
 
-<% @items.each do |item| %>
-<div class='category-container'>
-  <h2 class='small-font'><%= item.name %></h2>
-  <%= items_crud_buttons(item) %>
-  </div>
-<% end %>
+<%= list_items(@items) %>
 </div>

@@ -14,4 +14,16 @@ module ItemsHelper
                   class: 'btn btn-crud btn-crud--delete', method: :delete)
     end
   end
+
+  def list_items(items)
+    items.map do |item|
+      content_for :list do
+      content_tag :div, class: 'category-container' do
+        content_tag(:h2, item.name, class: 'small-font') +
+          items_crud_buttons(item)
+      end
+    end
+  end
+  content_for :list
+  end
 end
