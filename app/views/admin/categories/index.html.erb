@@ -5,12 +5,7 @@
   <% @categories.each do |category| %>
   <div class='category-container'>
     <h2><%= category.name %></h2>
-    <div class="buttons">
-      <%= link_to 'edit',edit_admin_category_path(category), class:' btn btn-crud btn-crud--edit' %>
-      <%= link_to 'show', admin_category_path(category),class:'btn btn-crud btn-crud--show'%>
-      <%= button_to 'destroy', admin_category_path(category), method: 'delete', class:'btn btn-crud btn-crud--delete' %>
-
-    </div>
+    <%= category_crud_buttons(category)  %>
   </div>
   <% end %>
 
