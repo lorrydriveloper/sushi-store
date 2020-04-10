@@ -12,6 +12,7 @@
 </head>
 
 <body>
+  <%= render 'partials/svg' %>
   <% flash.keys.each do |type| %>
   <div data-alert class="flash <%= type %> alert-box radius">
     <%= flash[type] %>
