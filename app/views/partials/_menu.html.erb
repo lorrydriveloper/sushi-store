@@ -4,7 +4,11 @@
     <a href="<%= category_path(category) %>">
       <div class="categories__container">
         <h4 class="categories__text"><%= category.name %></h4>
-        <div class="categories__icon"></div>
+        <div class="categories__icon">
+          <i class="fa ">
+            <svg><use xlink:href="#<%= category.icon %>"></use></svg>
+          </i>
+        </div>
       </div>
     </a>
     <% end %>
