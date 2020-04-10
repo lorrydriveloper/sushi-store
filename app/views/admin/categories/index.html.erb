@@ -4,9 +4,11 @@
 <div class="dashboard__container">
   <% @categories.each do |category| %>
   <div class='category-container'>
-    <h2><%= category.name %></h2>
+    <h2><span><i class="fa"> <svg>
+            <use xlink:href="#<%= category.icon %>"></use>
+          </svg></i></span>
+      <%= category.name %></h2>
     <%= category_crud_buttons(category)  %>
   </div>
   <% end %>
-
 </div>
