@@ -2,39 +2,11 @@
 <div class="flex-container checkout__container">
   <h2 class='checkout__header'>Checkout</h2>
 <%= form_for @order do |f| %>
-  <% @order_hash.each do |hash| %>
-    <% hash.each do |quantity, item| %>
-    <% if quantity.to_i.positive? %>
-    <div class="checkout__item">
-      <h3><%= item.name %> X <%= quantity %> at  <%= item.price %> </h3>
-      <h3>
-      Total: £ <%= content_tag :span, total(quantity, item), class:'item_total' %>
-           <%= link_to 'Modify', item_path(item), class: 'btn btn--modify' %>
-     </h3>
-    </div>
-    <% end %>
-    <% end %>
-  <% end %>
+ <%= list_orders(@order_hash) %>
   <div class="checkout__grand_total">
     <h2 class>Grant Total: £<span class="grand_total"></span></h2>
 
     <%= f.submit 'Checkout', class:'btn btn--checkout' %>
   </div>
-
 <% end %>
-
-
 </div>
-
-<script>
-
-  function grand_total() {
-    span = document.querySelectorAll('.item_total')
-    arr = []
-    span.forEach(total => arr.push(parseFloat(total.innerText)))
-    return arr.reduce((a, b) => a + b, 0).toFixed(2)
-  }
-
-  grand = document.querySelector('.grand_total')
-  grand.innerHTML = grand_total()
-</script>
