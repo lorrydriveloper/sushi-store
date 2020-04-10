@@ -6,7 +6,7 @@ module SessionsHelper
             '/auth/facebook',
             class: 'btn btn__login btn__login--facebook') +
       link_to('Log in with Google',
-              '/auth/facebook',
+              '/auth/google_oauth2',
               class: 'btn btn__login btn__login--google')
   end
 end

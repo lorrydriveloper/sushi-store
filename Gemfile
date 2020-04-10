@@ -31,8 +31,7 @@ gem 'email_address'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'omniauth-google'
-gem 'omniauth-twitter'
+gem 'omniauth-google-oauth2'
 
 gem 'dotenv-rails'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
