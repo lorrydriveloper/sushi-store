@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   def update
     user = current_user
     if user.update_attributes(user_params)
-      flash[:success] = 'Your Account has been succesful updated'
+      flash[:success] = 'Your Account has been successful updated'
     else
       flash[:error] = 'Something went wrong'
     end

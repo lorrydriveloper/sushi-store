@@ -3,7 +3,7 @@
 class CommentsController < ApplicationController
   before_action :require_logged_in, except: %i[index]
   before_action :find_comment, only: %i[edit update destroy]
-  before_action :find_item, only: %i[index edit]
+  before_action :find_item, only: %i[index edit create]
 
   def index
     @comments = @item.last_comments
@@ -11,7 +11,8 @@ class CommentsController < ApplicationController
   end
 
   def create
-    comment = Comment.new(comment_params)
+    comment = current_user.comments.build(comment_params)
+    comment.item = @item
     if comment.save
       flash[:success] = 'Comment successfully created'
       redirect_to item_comments_path(comment.item)

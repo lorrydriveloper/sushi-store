@@ -22,13 +22,11 @@ module Admin
       hash[:profit] = orders.sum(:total).round(2)
       hash
     end
-    
+
     def dates
       @yesterday = Date.yesterday
       @today = Date.today
       @tomorrow = Date.tomorrow
-
     end
-
   end
 end

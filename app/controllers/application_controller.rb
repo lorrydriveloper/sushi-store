@@ -4,10 +4,8 @@ class ApplicationController < ActionController::Base
   before_action :current_user, :cart
 
   private
-
-
-  def cart 
-   session[:cart] ||= session[:cart] = {}
+  def cart
+    session[:cart] ||= session[:cart] = {}
   end
 
   def current_user
@@ -26,8 +24,7 @@ class ApplicationController < ActionController::Base
     unless current_user.admin
       flash[:error] = 'Only admins can access to admin dashboard'
       redirect_to root_path
-    end
-    
+    end 
   end
 
   def belong_to_user?(comment)

@@ -16,9 +16,6 @@ module AdminHelper
   end
 
   def profit_diff(stats1, stats2)
-
     (stats1[:profit] - stats2[:profit]).round(2)
-    
   end
-  
 end
