@@ -9,6 +9,6 @@ class Comment < ApplicationRecord
   end
 
   def self.last_comments
-    where('created_at desc')
+    order('created_at desc')
   end
 end
