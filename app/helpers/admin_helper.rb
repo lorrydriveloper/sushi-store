@@ -6,7 +6,8 @@ module AdminHelper
   end
 
   def order_diff(stats1, stats2)
-    (stats1[:orders] - stats2[:orders]) * (100 / stats2[:orders])
+    stats2[:orders] = stats2[:orders].positive? ? stats2[:orders] : 1
+    (stats1[:orders] - stats2[:orders]) * (100 / (stats2[:orders]))
   end
 
   def value_diff(stats1, stats2)
